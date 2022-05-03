@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List Reciplease-->
+        <!--Favorite List Reciplease-->
         <scene sceneID="f1k-Hg-eWY">
             <objects>
-                <viewController id="l0B-Ta-LSd" userLabel="List Reciplease" customClass="ListRecipleaseViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="l0B-Ta-LSd" userLabel="Favorite List Reciplease" customClass="ListFavoritesViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LHh-fL-n16">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="503" y="-372"/>
         </scene>
-        <!--Favorite View Controller-->
+        <!--List Reciplease View Controller-->
         <scene sceneID="5Mg-6b-THk">
             <objects>
-                <viewController id="Ypx-3X-R2z" userLabel="Favorite View Controller" customClass="ListFavoritesViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ypx-3X-R2z" userLabel="List Reciplease View Controller" customClass="ListRecipleaseViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uOr-Oq-GVa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -236,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAa-n4-MqA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="-372"/>
+            <point key="canvasLocation" x="1307" y="-372"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LaG-Ym-DDZ">
