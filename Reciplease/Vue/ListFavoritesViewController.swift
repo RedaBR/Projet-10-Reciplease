@@ -13,28 +13,26 @@ class ListFavoritesViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    let result = SearchViewController()
 }
-extension ListFavoritesViewController : UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
+
+
+//extension ListFavoritesViewController : UITableViewDataSource {
+    //func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       // RecipleaseModel().ingredient.count
+   //}
+    
+   // func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "Favorites")
+       // let ingredients = RecipleaseModel()
+        //cell?.textLabel?.text = ""
+        
+        //return cell!
+  //  }
     
     
-}
+

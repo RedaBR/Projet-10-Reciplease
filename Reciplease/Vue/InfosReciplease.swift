@@ -1,180 +1,243 @@
 
-
 import Foundation
 
-
 // MARK: - InfosReciplease
-class InfosReciplease: Codable {
-    let from: Int
-    let to: Int
-    let count: Int
-    let links: InfosRecipleaseLinks
-    let hits: [Hit]
+struct InfosReciplease: Codable {
+    let from, to, count: Int?
+    let links: InfosRecipleaseLinks?
+    let hits: [Hit]?
 
-  
+    enum CodingKeys: String, CodingKey {
+        case from, to, count
+        case links = "_links"
+        case hits
+    }
 }
 
 // MARK: - Hit
-class Hit: Codable {
-    let recipe: Recipe
-    let links: HitLinks
+struct Hit: Codable {
+    let recipe: Recipe?
+    let links: HitLinks?
 
-   
+    enum CodingKeys: String, CodingKey {
+        case recipe
+        case links = "_links"
+    }
 }
 
 // MARK: - HitLinks
-class HitLinks: Codable {
-    let linksSelf: Next
+struct HitLinks: Codable {
+    let linksSelf: Next?
 
-
-   
+    enum CodingKeys: String, CodingKey {
+        case linksSelf = "self"
+    }
 }
 
 // MARK: - Next
-class Next: Codable {
-    let href: String
-    let title: Title
-
-   
-
-}
-
-enum Title: String, Codable {
-    case nextPage = "Next page"
-    case titleSelf = "Self"
+struct Next: Codable {
+    let href: String?
+    let title: String?
 }
 
 // MARK: - Recipe
-class Recipe: Codable {
-    let uri: String
-    let label: String
-    let image: String
-    let images: Images
-    let source: String
-    let url: String
-    let shareAs: String
-    let yield: Int
-    let dietLabels: [DietLabel]
-    let healthLabels: [String]
-    let cautions: [String]
-    let ingredientLines: [String]
-    let ingredients: [Ingredient]
-    let calories: Double
-    let totalWeight: Double
-    let totalTime: Int
-    let cuisineType: [String]
-    let mealType: [MealType]
-    let dishType: [DishType]
-    let totalNutrients: [String: Total]
-    let totalDaily: [String: Total]
-    let digest: [Digest]
-
-   
-
-    
-}
-
-enum DietLabel: String, Codable {
-    case highFiber = "High-Fiber"
-    case lowCarb = "Low-Carb"
+struct Recipe: Codable {
+    let uri: String?
+    let label: String?
+    let image: String?
+    let images: Images?
+    let source: String?
+    let url: String?
+    let shareAs: String?
+    let yield: Int?
+    let dietLabels, healthLabels, cautions, ingredientLines: [String]?
+    let ingredients: [Ingredient]?
+    let calories, totalWeight: Double?
+    let totalTime: Int?
+    let cuisineType, mealType, dishType: [String]?
+    let totalNutrients: TotalNutrients?
+    let totalDaily: TotalDaily?
+    let digest: [Digest]?
 }
 
 // MARK: - Digest
-class Digest: Codable {
-    let label: String
-    let tag: String
-    let schemaOrgTag: SchemaOrgTag?
-    let total: Double
-    let hasRDI: Bool
-    let daily: Double
-    let unit: Unit
-    let sub: [Digest]?
+struct Digest: Codable {
+    let label, tag: String?
+    let schemaOrgTag: String?
+    let total: Double?
+    let hasRdi: Bool?
+    let daily: Double?
+    let unit: String?
+    let sub: [Sub]?
 
- 
-
- 
+    enum CodingKeys: String, CodingKey {
+        case label, tag, schemaOrgTag, total
+        case hasRdi = "hasRDI"
+        case daily, unit, sub
+    }
 }
 
-enum SchemaOrgTag: String, Codable {
-    case carbohydrateContent = "carbohydrateContent"
-    case cholesterolContent = "cholesterolContent"
-    case fatContent = "fatContent"
-    case fiberContent = "fiberContent"
-    case proteinContent = "proteinContent"
-    case saturatedFatContent = "saturatedFatContent"
-    case sodiumContent = "sodiumContent"
-    case sugarContent = "sugarContent"
-    case transFatContent = "transFatContent"
-}
+// MARK: - Sub
+struct Sub: Codable {
+    let label, tag: String?
+    let schemaOrgTag: String?
+    let total: Double?
+    let hasRdi: Bool?
+    let daily: Double?
+    let unit: String?
 
-enum Unit: String, Codable {
-    case empty = "%"
-    case g = "g"
-    case kcal = "kcal"
-    case mg = "mg"
-    case µg = "µg"
-}
-
-enum DishType: String, Codable {
-    case condimentsAndSauces = "condiments and sauces"
-    case mainCourse = "main course"
-    case salad = "salad"
-    case starter = "starter"
+    enum CodingKeys: String, CodingKey {
+        case label, tag, schemaOrgTag, total
+        case hasRdi = "hasRDI"
+        case daily, unit
+    }
 }
 
 // MARK: - Images
-class Images: Codable {
-    let thumbnail: Large
-    let small: Large
-    let regular: Large
+struct Images: Codable {
+    let thumbnail, small, regular: Regular?
     let large: Large?
 
-   
-
-   
+    enum CodingKeys: String, CodingKey {
+        case thumbnail = "THUMBNAIL"
+        case small = "SMALL"
+        case regular = "REGULAR"
+        case large = "LARGE"
+    }
 }
 
 // MARK: - Large
-class Large: Codable {
-    let url: String
-    let width: Int
-    let height: Int
+struct Large: Codable {
+    let url: String?
+    let width, height: Int?
+}
 
-  
-
+// MARK: - Regular
+struct Regular: Codable {
+    let url: String?
+    let width, height: Int?
 }
 
 // MARK: - Ingredient
-class Ingredient: Codable {
-    let text: String
-    let quantity: Double
+struct Ingredient: Codable {
+    let text: String?
+    let quantity: Double?
     let measure: String?
-    let food: String
-    let weight: Double
-    let foodCategory: String
-    let foodId: String
+    let food: String?
+    let weight: Double?
+    let foodCategory, foodId: String?
     let image: String?
-
-   
-
 }
 
-enum MealType: String, Codable {
-    case lunchDinner = "lunch/dinner"
+// MARK: - TotalDaily
+struct TotalDaily: Codable {
+    let enercKcal, fat, fasat, chocdf: CA?
+    let fibtg, procnt, chole, na: CA?
+    let ca, mg, k, fe: CA?
+    let zn, p, vitaRae, vitc: CA?
+    let thia, ribf, nia, vitb6A: CA?
+    let foldfe, vitb12, vitd, tocpha: CA?
+    let vitk1: CA?
+
+    enum CodingKeys: String, CodingKey {
+        case enercKcal = "ENERC_KCAL"
+        case fat = "FAT"
+        case fasat = "FASAT"
+        case chocdf = "CHOCDF"
+        case fibtg = "FIBTG"
+        case procnt = "PROCNT"
+        case chole = "CHOLE"
+        case na = "NA"
+        case ca = "CA"
+        case mg = "MG"
+        case k = "K"
+        case fe = "FE"
+        case zn = "ZN"
+        case p = "P"
+        case vitaRae = "VITA_RAE"
+        case vitc = "VITC"
+        case thia = "THIA"
+        case ribf = "RIBF"
+        case nia = "NIA"
+        case vitb6A = "VITB6A"
+        case foldfe = "FOLDFE"
+        case vitb12 = "VITB12"
+        case vitd = "VITD"
+        case tocpha = "TOCPHA"
+        case vitk1 = "VITK1"
+    }
 }
 
-// MARK: - Total
-class Total: Codable {
-    let label: String
-    let quantity: Double
-    let unit: Unit
+// MARK: - CA
+struct CA: Codable {
+    let label: String?
+    let quantity: Double?
+    let unit: String?
+}
 
+// MARK: - TotalNutrients
+struct TotalNutrients: Codable {
+    let enercKcal, fat, fasat, fatrn: CA?
+    let fams, fapu, chocdf: CA?
+    let chocdfNet: ChocdfNet?
+    let fibtg, sugar, sugarAdded, procnt: CA?
+    let chole, na, ca, mg: CA?
+    let k, fe, zn, p: CA?
+    let vitaRae, vitc, thia, ribf: CA?
+    let nia, vitb6A, foldfe, folfd: CA?
+    let folac, vitb12, vitd, tocpha: CA?
+    let vitk1: CA?
+    let sugarAlcohol: ChocdfNet?
+    let water: CA?
 
-  
+    enum CodingKeys: String, CodingKey {
+        case enercKcal = "ENERC_KCAL"
+        case fat = "FAT"
+        case fasat = "FASAT"
+        case fatrn = "FATRN"
+        case fams = "FAMS"
+        case fapu = "FAPU"
+        case chocdf = "CHOCDF"
+        case chocdfNet = "CHOCDF.net"
+        case fibtg = "FIBTG"
+        case sugar = "SUGAR"
+        case sugarAdded = "SUGAR.added"
+        case procnt = "PROCNT"
+        case chole = "CHOLE"
+        case na = "NA"
+        case ca = "CA"
+        case mg = "MG"
+        case k = "K"
+        case fe = "FE"
+        case zn = "ZN"
+        case p = "P"
+        case vitaRae = "VITA_RAE"
+        case vitc = "VITC"
+        case thia = "THIA"
+        case ribf = "RIBF"
+        case nia = "NIA"
+        case vitb6A = "VITB6A"
+        case foldfe = "FOLDFE"
+        case folfd = "FOLFD"
+        case folac = "FOLAC"
+        case vitb12 = "VITB12"
+        case vitd = "VITD"
+        case tocpha = "TOCPHA"
+        case vitk1 = "VITK1"
+        case sugarAlcohol = "Sugar.alcohol"
+        case water = "WATER"
+    }
+}
+
+// MARK: - ChocdfNet
+struct ChocdfNet: Codable {
+    let label: String?
+    let quantity: Int?
+    let unit: String?
 }
 
 // MARK: - InfosRecipleaseLinks
-class InfosRecipleaseLinks: Codable {
-    let next: Next
+struct InfosRecipleaseLinks: Codable {
+    let next: Next?
 }
 
