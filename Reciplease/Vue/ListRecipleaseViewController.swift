@@ -13,10 +13,14 @@ class ListRecipleaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        listReciplease.dataSource = self
-        
-        listReciplease.register(CustomCellTableViewCell.self, forCellReuseIdentifier: "ListReciplease")
+        self.listReciplease.dataSource = self
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        self.listReciplease.register(CustomCellTableViewCell.self, forCellReuseIdentifier: "ListReciplease")
     }
     
    
@@ -30,24 +34,11 @@ extension ListRecipleaseViewController : UITableViewDataSource {
    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:CustomCellTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ListReciplease") as! CustomCellTableViewCell
+        let cell = listReciplease.dequeueReusableCell(withIdentifier: "CustomCellTableViewCellID") as! CustomCellTableViewCell
         let recipe = PropertiesRecipService.shared.listRecip[indexPath.row]
       
-        
-        var content = cell.defaultContentConfiguration()
-        
+        cell.initCell(recipe: recipe)
 
-        // Configure content.
-        //content.image = recipe.image1
-        content.text = recipe.label
-       
-        cell.configure(title: content.text!)
-
-        // Customize appearance.
-        //content.imageProperties.tintColor = .purple
-        //cell.configure(title: content.text!)
-        cell.contentConfiguration = content
-        
         return cell
     }
     

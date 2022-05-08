@@ -17,11 +17,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
         ingredients.delegate = self
         ingredients.becomeFirstResponder()
        
-    
     }
     override func viewWillAppear(_ animated: Bool) {
 
@@ -73,14 +71,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         listIngred.text = IngredList
         //ingredients.text = ""
 
-        
     }
    
-     
     private func getResult() {
         
          let ingredName = ingredients.text
-        
         
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListRecipleaseViewControllerID") as! ListRecipleaseViewController
        
@@ -94,15 +89,36 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             let image1 = info?.hits
             
             for hit in hits {
-                let labelRecip = hit.recipe?.label
-                let imageRecip = hit.recipe?.image
-                let recip = PropertiesReciplease(label: labelRecip!)
+
+                let recip = self.getPropertiesRecipleaseForHit(hit: hit)
                 sharedPropertiesRecipe.addList(list: recip)
             }
             
             self.present(vc, animated: true, completion: nil)
         }
        
+    }
+    
+    func getPropertiesRecipleaseForHit(hit:Hit) -> PropertiesReciplease {
+        
+        let title =  hit.recipe?.label ?? ""
+        
+        var desc:[String] = []
+        
+        let ingredients = hit.recipe?.ingredients ?? []
+        for ing in ingredients {
+            if ing.food != nil {
+                desc.append(ing.food!)
+            }
+        }
+        let description = desc.joined(separator: ", ")
+        let imageUrl = hit.recipe?.image ?? ""
+        let likeCount = 0
+        let time = hit.recipe?.totalTime ?? 0
+        
+        let recip =  PropertiesReciplease.init(title: title, description: description, imageUrl: imageUrl, likeCount: likeCount, time: time)
+        
+        return recip
     }
     
   

@@ -6,9 +6,12 @@
 //
 
 import Foundation
+
 struct PropertiesReciplease {
     
-    var label = ""
-  
-    
+    var title = ""
+    var description = ""
+    var imageUrl = ""
+    var likeCount = 0
+    var time = 0
 }
