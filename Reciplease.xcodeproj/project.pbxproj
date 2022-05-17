@@ -22,6 +22,7 @@
 		9D437D662821676000AF3E92 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437D652821676000AF3E92 /* DetailsViewController.swift */; };
 		9D437D6B2821687D00AF3E92 /* ListFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437D6A2821687D00AF3E92 /* ListFavoritesViewController.swift */; };
 		9DBF728A283146A700490C4E /* CustomFavCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF7289283146A700490C4E /* CustomFavCellTableViewCell.swift */; };
+		9DC744EA2833EC75002E89A1 /* FavoritesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC744E92833EC75002E89A1 /* FavoritesDetailsViewController.swift */; };
 		9DCF0C982825C597008C96F4 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF0C972825C597008C96F4 /* CustomCellTableViewCell.swift */; };
 		9DDB0495282F2904009360F2 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ADD3A282C694E00035CEB /* Reciplease.xcdatamodeld */; };
 		9DF4E45428257BBF007C378A /* PropertiesReciplease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4E45328257BBF007C378A /* PropertiesReciplease.swift */; };
@@ -69,6 +70,7 @@
 		9D437D652821676000AF3E92 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailsViewController.swift; path = Reciplease/Vue/DetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		9D437D6A2821687D00AF3E92 /* ListFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListFavoritesViewController.swift; path = Reciplease/Vue/ListFavoritesViewController.swift; sourceTree = SOURCE_ROOT; };
 		9DBF7289283146A700490C4E /* CustomFavCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomFavCellTableViewCell.swift; path = Reciplease/Vue/CustomFavCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		9DC744E92833EC75002E89A1 /* FavoritesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesDetailsViewController.swift; path = Reciplease/Vue/FavoritesDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		9DCF0C972825C597008C96F4 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
 		9DF4E45328257BBF007C378A /* PropertiesReciplease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PropertiesReciplease.swift; path = Reciplease/Controller/PropertiesReciplease.swift; sourceTree = SOURCE_ROOT; };
 		9DF4E45B28257D2B007C378A /* PropertiesRecipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesRecipService.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		9D437D3B2821502600AF3E92 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9DC744E92833EC75002E89A1 /* FavoritesDetailsViewController.swift */,
 				9DBF7289283146A700490C4E /* CustomFavCellTableViewCell.swift */,
 				9D437D6A2821687D00AF3E92 /* ListFavoritesViewController.swift */,
 				9D437D652821676000AF3E92 /* DetailsViewController.swift */,
@@ -333,6 +336,7 @@
 				9DDB0495282F2904009360F2 /* Reciplease.xcdatamodeld in Sources */,
 				9D437D6B2821687D00AF3E92 /* ListFavoritesViewController.swift in Sources */,
 				9D437CFE28213D0800AF3E92 /* AppDelegate.swift in Sources */,
+				9DC744EA2833EC75002E89A1 /* FavoritesDetailsViewController.swift in Sources */,
 				9D1ADD41282C69C400035CEB /* CoreDataStack.swift in Sources */,
 				9D437D3D282150EB00AF3E92 /* SearchViewController.swift in Sources */,
 				9D12E76D2821DA0500EE7CAF /* InfosReciplease.swift in Sources */,

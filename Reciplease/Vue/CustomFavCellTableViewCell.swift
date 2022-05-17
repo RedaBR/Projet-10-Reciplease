@@ -25,6 +25,6 @@ class CustomFavCellTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     func initFavCell (recipe:CoreDataRecipe) {
-        titre?.text = recipe.title!
+        titre.text = recipe.title
     }
 }

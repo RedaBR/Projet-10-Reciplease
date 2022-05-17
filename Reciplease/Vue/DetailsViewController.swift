@@ -34,6 +34,10 @@ class DetailsViewController: UIViewController {
         properties.imageUrl = recipe!.imageUrl
         properties.likeCount = Int16(recipe!.likeCount)
         properties.time = Int16(recipe!.time)
+        
+        let ingredientsLines = recipe?.ingredLines
+        let listIngred = ingredientsLines?.joined(separator: "\n")
+        properties.ingredLines = listIngred
         do {
             try CoreDataStack.sharedInstance.viewContext.save()
         }

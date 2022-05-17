@@ -3,12 +3,13 @@
     <entity name="CoreDataRecipe" representedClassName=".CoreDataRecipe" syncable="YES" codeGenerationType="category">
         <attribute name="descript" optional="YES" attributeType="String"/>
         <attribute name="imageUrl" optional="YES" attributeType="String"/>
+        <attribute name="ingredLines" optional="YES" attributeType="String"/>
         <attribute name="likeCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="test" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="time" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="CoreDataRecipe" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="CoreDataRecipe" positionX="-63" positionY="-18" width="128" height="148"/>
     </elements>
 </model>

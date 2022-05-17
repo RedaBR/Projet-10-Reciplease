@@ -57,10 +57,7 @@ extension ListRecipleaseViewController : UITableViewDataSource, UITableViewDeleg
         let recipe = PropertiesRecipService.shared.listRecip[indexPath.row]
         
         performSegue(withIdentifier: "segueToDetails", sender: recipe)
-        //let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewControllerID") as! DetailsViewController
-        //vc.recipe = recipe
-        
-        // self.navigationController?.pushViewController(vc, animated: true)
+     
         
     }
     

@@ -55,12 +55,23 @@ class CoreDataStack {
         let request: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
         do {
             let properties = try CoreDataStack.sharedInstance.viewContext.insert(sameRecipe)
-            // let properties = try CoreDataStack.sharedInstance.viewContext.delete(recipeToDelete)
             try CoreDataStack.sharedInstance.viewContext.save()
         }
         catch {
             
         }
         
+    }
+    
+    func delete (recipeToDelete:NSManagedObject) {
+        
+            let request: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
+            do {
+                let properties = try CoreDataStack.sharedInstance.viewContext.delete(recipeToDelete)
+                try CoreDataStack.sharedInstance.viewContext.save()
+            }
+            catch {
+                
+            }
     }
 }
