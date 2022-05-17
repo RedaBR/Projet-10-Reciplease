@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		9D12E76D2821DA0500EE7CAF /* InfosReciplease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D12E76C2821DA0500EE7CAF /* InfosReciplease.swift */; };
 		9D12E7722821DCB800EE7CAF /* RecipleaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D12E7712821DCB800EE7CAF /* RecipleaseService.swift */; };
+		9D1ADD41282C69C400035CEB /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ADD40282C69C400035CEB /* CoreDataStack.swift */; };
 		9D437CFE28213D0800AF3E92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437CFD28213D0800AF3E92 /* AppDelegate.swift */; };
 		9D437D0028213D0800AF3E92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437CFF28213D0800AF3E92 /* SceneDelegate.swift */; };
 		9D437D0528213D0800AF3E92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D437D0328213D0800AF3E92 /* Main.storyboard */; };
-		9D437D0828213D0800AF3E92 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D437D0628213D0800AF3E92 /* Reciplease.xcdatamodeld */; };
 		9D437D0A28213D1000AF3E92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D437D0928213D1000AF3E92 /* Assets.xcassets */; };
 		9D437D0D28213D1000AF3E92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D437D0B28213D1000AF3E92 /* LaunchScreen.storyboard */; };
 		9D437D1828213D1000AF3E92 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437D1728213D1000AF3E92 /* RecipleaseTests.swift */; };
@@ -21,9 +21,12 @@
 		9D437D422821519300AF3E92 /* ListRecipleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437D412821519300AF3E92 /* ListRecipleaseViewController.swift */; };
 		9D437D662821676000AF3E92 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437D652821676000AF3E92 /* DetailsViewController.swift */; };
 		9D437D6B2821687D00AF3E92 /* ListFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437D6A2821687D00AF3E92 /* ListFavoritesViewController.swift */; };
+		9DBF728A283146A700490C4E /* CustomFavCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF7289283146A700490C4E /* CustomFavCellTableViewCell.swift */; };
 		9DCF0C982825C597008C96F4 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF0C972825C597008C96F4 /* CustomCellTableViewCell.swift */; };
+		9DDB0495282F2904009360F2 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ADD3A282C694E00035CEB /* Reciplease.xcdatamodeld */; };
 		9DF4E45428257BBF007C378A /* PropertiesReciplease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4E45328257BBF007C378A /* PropertiesReciplease.swift */; };
 		9DF4E45C28257D2B007C378A /* PropertiesRecipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4E45B28257D2B007C378A /* PropertiesRecipService.swift */; };
+		9DFD4871282DADE400F56BA6 /* CoreDataRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD4870282DADE400F56BA6 /* CoreDataRecipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +49,12 @@
 /* Begin PBXFileReference section */
 		9D12E76C2821DA0500EE7CAF /* InfosReciplease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfosReciplease.swift; path = Reciplease/Vue/InfosReciplease.swift; sourceTree = SOURCE_ROOT; };
 		9D12E7712821DCB800EE7CAF /* RecipleaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseService.swift; sourceTree = "<group>"; };
+		9D1ADD3B282C694E00035CEB /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
+		9D1ADD40282C69C400035CEB /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		9D437CFA28213D0800AF3E92 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D437CFD28213D0800AF3E92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D437CFF28213D0800AF3E92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9D437D0428213D0800AF3E92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9D437D0728213D0800AF3E92 /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
 		9D437D0928213D1000AF3E92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D437D0C28213D1000AF3E92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D437D0E28213D1000AF3E92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,9 +68,11 @@
 		9D437D412821519300AF3E92 /* ListRecipleaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListRecipleaseViewController.swift; path = Reciplease/Vue/ListRecipleaseViewController.swift; sourceTree = SOURCE_ROOT; };
 		9D437D652821676000AF3E92 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailsViewController.swift; path = Reciplease/Vue/DetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		9D437D6A2821687D00AF3E92 /* ListFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListFavoritesViewController.swift; path = Reciplease/Vue/ListFavoritesViewController.swift; sourceTree = SOURCE_ROOT; };
+		9DBF7289283146A700490C4E /* CustomFavCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomFavCellTableViewCell.swift; path = Reciplease/Vue/CustomFavCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		9DCF0C972825C597008C96F4 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
 		9DF4E45328257BBF007C378A /* PropertiesReciplease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PropertiesReciplease.swift; path = Reciplease/Controller/PropertiesReciplease.swift; sourceTree = SOURCE_ROOT; };
 		9DF4E45B28257D2B007C378A /* PropertiesRecipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesRecipService.swift; sourceTree = "<group>"; };
+		9DFD4870282DADE400F56BA6 /* CoreDataRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRecipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D1ADD39282C686000035CEB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9D1ADD3A282C694E00035CEB /* Reciplease.xcdatamodeld */,
+				9D1ADD40282C69C400035CEB /* CoreDataStack.swift */,
+				9DFD4870282DADE400F56BA6 /* CoreDataRecipe.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		9D437CF128213D0800AF3E92 = {
 			isa = PBXGroup;
 			children = (
@@ -117,12 +133,10 @@
 		9D437CFC28213D0800AF3E92 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
+				9D437D0E28213D1000AF3E92 /* Info.plist */,
 				9D437D3A28214EB200AF3E92 /* Vue */,
 				9D437D3628214E1F00AF3E92 /* Model */,
 				9D437D3B2821502600AF3E92 /* Controller */,
-				9D437D0928213D1000AF3E92 /* Assets.xcassets */,
-				9D437D0E28213D1000AF3E92 /* Info.plist */,
-				9D437D0628213D0800AF3E92 /* Reciplease.xcdatamodeld */,
 			);
 			path = Reciplease;
 			sourceTree = "<group>";
@@ -148,6 +162,7 @@
 		9D437D3628214E1F00AF3E92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9D1ADD39282C686000035CEB /* CoreData */,
 				9DF4E45328257BBF007C378A /* PropertiesReciplease.swift */,
 				9DF4E45B28257D2B007C378A /* PropertiesRecipService.swift */,
 				9D12E76C2821DA0500EE7CAF /* InfosReciplease.swift */,
@@ -163,6 +178,7 @@
 				9D437CFD28213D0800AF3E92 /* AppDelegate.swift */,
 				9D437CFF28213D0800AF3E92 /* SceneDelegate.swift */,
 				9D437D0B28213D1000AF3E92 /* LaunchScreen.storyboard */,
+				9D437D0928213D1000AF3E92 /* Assets.xcassets */,
 			);
 			path = Vue;
 			sourceTree = "<group>";
@@ -170,6 +186,7 @@
 		9D437D3B2821502600AF3E92 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9DBF7289283146A700490C4E /* CustomFavCellTableViewCell.swift */,
 				9D437D6A2821687D00AF3E92 /* ListFavoritesViewController.swift */,
 				9D437D652821676000AF3E92 /* DetailsViewController.swift */,
 				9D437D412821519300AF3E92 /* ListRecipleaseViewController.swift */,
@@ -309,18 +326,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D437D0828213D0800AF3E92 /* Reciplease.xcdatamodeld in Sources */,
+				9DFD4871282DADE400F56BA6 /* CoreDataRecipe.swift in Sources */,
 				9DF4E45428257BBF007C378A /* PropertiesReciplease.swift in Sources */,
 				9DCF0C982825C597008C96F4 /* CustomCellTableViewCell.swift in Sources */,
 				9DF4E45C28257D2B007C378A /* PropertiesRecipService.swift in Sources */,
+				9DDB0495282F2904009360F2 /* Reciplease.xcdatamodeld in Sources */,
 				9D437D6B2821687D00AF3E92 /* ListFavoritesViewController.swift in Sources */,
 				9D437CFE28213D0800AF3E92 /* AppDelegate.swift in Sources */,
+				9D1ADD41282C69C400035CEB /* CoreDataStack.swift in Sources */,
 				9D437D3D282150EB00AF3E92 /* SearchViewController.swift in Sources */,
 				9D12E76D2821DA0500EE7CAF /* InfosReciplease.swift in Sources */,
 				9D437D0028213D0800AF3E92 /* SceneDelegate.swift in Sources */,
 				9D437D422821519300AF3E92 /* ListRecipleaseViewController.swift in Sources */,
 				9D12E7722821DCB800EE7CAF /* RecipleaseService.swift in Sources */,
 				9D437D662821676000AF3E92 /* DetailsViewController.swift in Sources */,
+				9DBF728A283146A700490C4E /* CustomFavCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,14 +516,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Reciplease/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Openclassrooms.Reciplease;
+				PRODUCT_BUNDLE_IDENTIFIER = Openclassrooms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -514,14 +537,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Reciplease/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Openclassrooms.Reciplease;
+				PRODUCT_BUNDLE_IDENTIFIER = Openclassrooms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -649,13 +675,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9D437D0628213D0800AF3E92 /* Reciplease.xcdatamodeld */ = {
+		9D1ADD3A282C694E00035CEB /* Reciplease.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9D437D0728213D0800AF3E92 /* Reciplease.xcdatamodel */,
+				9D1ADD3B282C694E00035CEB /* Reciplease.xcdatamodel */,
 			);
-			currentVersion = 9D437D0728213D0800AF3E92 /* Reciplease.xcdatamodel */;
-			path = Reciplease.xcdatamodeld;
+			currentVersion = 9D1ADD3B282C694E00035CEB /* Reciplease.xcdatamodel */;
+			name = Reciplease.xcdatamodeld;
+			path = ../../../Reciplease.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

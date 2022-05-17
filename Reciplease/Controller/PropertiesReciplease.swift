@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import CoreData
 
-struct PropertiesReciplease {
+class PropertiesReciplease {
     
     var title = ""
-    var description = ""
+    var descrip = ""
     var imageUrl = ""
     var likeCount = 0
     var time = 0
+    var ingredLines = [""]
 }

@@ -25,26 +25,26 @@ class RecipleaseService {
     func getReciplease (ingredients:String, callback: @escaping (InfosReciplease?, Bool, Error?)->Void) {
         
         let url = getUrl(text: ingredients)
-      
+        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-       
+        
         task = session.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 if let data = data, error == nil {
-                    
+                    //let dataString = String(data: data, encoding: .utf8)
                     do {
                         let responseJson = try JSONDecoder().decode(InfosReciplease.self, from:data)
                         callback(responseJson,true,error)
                     }
                     catch {
-                      callback(nil,false,error)
-                   }
+                        callback(nil,false,error)
+                    }
                 }
             }
-           
+            
         }
-//
+        //
         task.resume()
     }
     
