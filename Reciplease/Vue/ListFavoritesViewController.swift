@@ -24,8 +24,13 @@ class ListFavoritesViewController: UIViewController {
         
         ListFavTableView.delegate = self
         ListFavTableView.dataSource = self
-        
         getFetch()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     var backUpList : [CoreDataRecipe] = []
    

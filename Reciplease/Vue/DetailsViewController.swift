@@ -34,7 +34,6 @@ class DetailsViewController: UIViewController {
         properties.imageUrl = recipe!.imageUrl
         properties.likeCount = Int16(recipe!.likeCount)
         properties.time = Int16(recipe!.time)
-        
         let ingredientsLines = recipe?.ingredLines
         let listIngred = ingredientsLines?.joined(separator: "\n")
         properties.ingredLines = listIngred
@@ -52,21 +51,25 @@ class DetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //let imageUrl:URL = URL(string: recipe!.imageUrl)!
-        // DispatchQueue.global(qos: .userInitiated).async {
+        let imageUrl:URL = URL(string: recipe!.imageUrl)!
+        DispatchQueue.global(qos: .userInitiated).async {
+            let imageData:NSData = NSData(contentsOf: imageUrl)!
+            DispatchQueue.main.async {
+                let image = UIImage(data: imageData as Data)
+                self.mainImage.image = image
+            }
+        }
         
-        //let imageData:NSData = NSData(contentsOf: imageUrl)!
-        
-        // When from background thread, UI needs to be updated on main_queue
-        // DispatchQueue.main.async {
-        //let image = UIImage(data: imageData as Data)
-        // self.mainImage.image = image
-        //}
-        //}
         self.titleRecip.text = recipe?.title
+        
         let ingredientsLines = recipe?.ingredLines
         let listIngred = ingredientsLines?.joined(separator: "\n")
         list.text = listIngred
+        
+        likeLabel.text = String(recipe!.likeCount)
+        
+        timeLabel.text = String(recipe!.time)
+        
         
         CoreDataStack.sharedInstance.getPropertieWithTitle(title: self.recipe!.title) { (recipes) in
             

@@ -17,6 +17,7 @@ class FavoritesDetailsViewController: UIViewController {
     
     @IBAction func deleteInFav() {
         CoreDataStack.sharedInstance.delete(recipeToDelete: recipe!)
+      
     }
     
     var recipe : CoreDataRecipe?
@@ -30,7 +31,22 @@ class FavoritesDetailsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.detailsTitle.text = recipe?.title
+        
         detailsList.text = recipe?.ingredLines
+        
+        let imageUrl:URL = URL(string: recipe!.imageUrl!)!
+        DispatchQueue.global(qos: .userInitiated).async {
+            let imageData:NSData = NSData(contentsOf: imageUrl)!
+            DispatchQueue.main.async {
+                let image = UIImage(data: imageData as Data)
+                self.imgDetails.image = image
+            }
+        }
+        
+        likeLabel.text = String(recipe!.likeCount)
+        timeLabel.text = String(recipe!.time)
+       
+        
     }
     
     func getRecipeToDelete () {
