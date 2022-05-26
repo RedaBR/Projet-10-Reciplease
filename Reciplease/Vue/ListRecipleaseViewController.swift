@@ -16,26 +16,13 @@ class ListRecipleaseViewController: UIViewController {
             successVC?.recipe = recip
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.listReciplease.dataSource = self
         self.listReciplease.delegate = self
         
     }
-    //let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewControllerID") as! DetailsViewController
-    
-    
-    
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        //        self.listReciplease.register(CustomCellTableViewCell.self, forCellReuseIdentifier: "ListReciplease")
-    }
-    
-    
+   
     @IBOutlet weak var listReciplease: UITableView!
     
 }

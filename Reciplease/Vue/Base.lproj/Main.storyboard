@@ -35,13 +35,13 @@
                                                         <constraint firstAttribute="height" constant="140" id="ikM-jD-OGM"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mekess speciality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDq-OT-Qin">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDq-OT-Qin">
                                                     <rect key="frame" x="10" y="86.5" width="354" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foul, tomate, a3dass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrM-Jb-07W" userLabel="description">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrM-Jb-07W" userLabel="description">
                                                     <rect key="frame" x="10" y="109.5" width="354" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -147,38 +147,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RJt-zw-g15">
+                                <rect key="frame" x="20" y="382" width="374" height="340"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.21607002619999999" green="0.2000213861" blue="0.19568935039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nL5-jP-PbX" userLabel="Main Image">
+                                <rect key="frame" x="20" y="161" width="374" height="213"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="recipe title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myH-mu-g42">
-                                <rect key="frame" x="20" y="44" width="374" height="65"/>
+                                <rect key="frame" x="30" y="314" width="347" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RJt-zw-g15">
-                                <rect key="frame" x="20" y="161" width="374" height="478"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nL5-jP-PbX" userLabel="Main Image">
-                                <rect key="frame" x="20" y="161" width="374" height="213"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIf-Xy-Yph">
                                 <rect key="frame" x="30" y="730" width="347" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Get directions"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baK-uV-xlh">
-                                <rect key="frame" x="314" y="44" width="80" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Fav"/>
-                                <connections>
-                                    <action selector="addFav" destination="8K5-jO-gLj" eventType="touchUpInside" id="AEv-zl-Jxc"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fGu-vY-L01">
                                 <rect key="frame" x="296" y="161" width="81" height="81"/>
@@ -209,6 +201,26 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reciplease" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yV-70-bRZ">
+                                <rect key="frame" x="85" y="20" width="203" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baK-uV-xlh">
+                                <rect key="frame" x="315" y="20" width="62" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.21607002619999999" green="0.2000213861" blue="0.19568935039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="icon@">
+                                    <color key="titleColor" red="0.74787503479999995" green="0.7839788795" blue="0.81315654520000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFav" destination="8K5-jO-gLj" eventType="touchUpInside" id="AEv-zl-Jxc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UkP-EP-H9F"/>
                         <color key="backgroundColor" red="0.21607002619999999" green="0.2000213861" blue="0.19568935039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -322,39 +334,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HSB-8f-pYG" userLabel="Ingredients">
-                                <rect key="frame" x="20" y="84.5" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reciplease" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYv-M4-m4j">
-                                <rect key="frame" x="10" y="54" width="394" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="35.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bu3-vT-cmH">
+                                <rect key="frame" x="0.0" y="336" width="414" height="477"/>
+                                <color key="backgroundColor" red="0.21607002619999999" green="0.2000213861" blue="0.19568935039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8El-SO-ofb">
+                                <rect key="frame" x="311" y="286" width="83" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteIngred" destination="MMw-J1-EfP" eventType="touchUpInside" id="X2B-UA-ziW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your ingredients : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onJ-ir-lKV">
+                                <rect key="frame" x="20" y="293" width="253" height="29.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Lemon Cheese Sausages..." textAlignment="justified" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="HSB-8f-pYG" userLabel="Ingredients">
+                                <rect key="frame" x="0.0" y="84" width="414" height="192"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9P-bD-3u2" userLabel="add">
-                                <rect key="frame" x="359" y="84.5" width="30" height="34"/>
-                                <state key="normal" title="add"/>
+                                <rect key="frame" x="311" y="164" width="83" height="40"/>
+                                <color key="backgroundColor" red="0.2535366416" green="0.5723157525" blue="0.36991813779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="addIngredToList" destination="MMw-J1-EfP" eventType="touchUpInside" id="yUh-pw-vcg"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bu3-vT-cmH">
-                                <rect key="frame" x="20" y="138.5" width="374" height="614.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8El-SO-ofb">
-                                <rect key="frame" x="353" y="143.5" width="36" height="30"/>
-                                <state key="normal" title="Clear"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's in your fridge ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt3-jY-t4G">
+                                <rect key="frame" x="0.0" y="84" width="414" height="29.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pci-if-3Yi" userLabel="Search for recipes">
-                                <rect key="frame" x="20" y="773" width="374" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Search for recipes"/>
+                                <rect key="frame" x="20" y="727" width="374" height="46"/>
+                                <color key="backgroundColor" red="0.2535366416" green="0.5723157525" blue="0.36991813779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="26"/>
+                                <state key="normal" title="Search for recipes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="SearchRecipe" destination="MMw-J1-EfP" eventType="touchUpInside" id="zGP-UB-2tH"/>
                                 </connections>
@@ -363,24 +401,31 @@
                         <viewLayoutGuide key="safeArea" id="ghE-7E-aXW"/>
                         <color key="backgroundColor" red="0.21607002619999999" green="0.2000213861" blue="0.19568935039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Pci-if-3Yi" firstAttribute="top" secondItem="Bu3-vT-cmH" secondAttribute="bottom" constant="20" id="4Hz-lo-Tg4"/>
-                            <constraint firstItem="ghE-7E-aXW" firstAttribute="trailing" secondItem="Bu3-vT-cmH" secondAttribute="trailing" constant="20" id="59E-Jy-f5x"/>
-                            <constraint firstItem="U9P-bD-3u2" firstAttribute="bottom" secondItem="HSB-8f-pYG" secondAttribute="bottom" id="5mb-iD-s5B"/>
-                            <constraint firstItem="ghE-7E-aXW" firstAttribute="bottom" secondItem="Pci-if-3Yi" secondAttribute="bottom" constant="10" id="A2S-Si-64d"/>
-                            <constraint firstItem="ghE-7E-aXW" firstAttribute="trailing" secondItem="Pci-if-3Yi" secondAttribute="trailing" constant="20" id="BZ6-aK-I4J"/>
-                            <constraint firstItem="HSB-8f-pYG" firstAttribute="top" secondItem="lYv-M4-m4j" secondAttribute="bottom" constant="10" id="CGr-c9-EUs"/>
-                            <constraint firstItem="ghE-7E-aXW" firstAttribute="trailing" secondItem="8El-SO-ofb" secondAttribute="trailing" constant="25" id="Gx3-5S-Nwr"/>
-                            <constraint firstItem="ghE-7E-aXW" firstAttribute="trailing" secondItem="lYv-M4-m4j" secondAttribute="trailing" constant="10" id="I3h-RF-yBd"/>
-                            <constraint firstItem="lYv-M4-m4j" firstAttribute="leading" secondItem="ghE-7E-aXW" secondAttribute="leading" constant="10" id="IoL-uC-uyY"/>
-                            <constraint firstItem="ghE-7E-aXW" firstAttribute="trailing" secondItem="HSB-8f-pYG" secondAttribute="trailing" constant="20" id="PXS-WD-B11"/>
-                            <constraint firstItem="HSB-8f-pYG" firstAttribute="leading" secondItem="ghE-7E-aXW" secondAttribute="leading" constant="20" id="R9H-Eo-IsF"/>
-                            <constraint firstItem="Bu3-vT-cmH" firstAttribute="top" secondItem="HSB-8f-pYG" secondAttribute="bottom" constant="20" id="TTJ-gJ-TfH"/>
-                            <constraint firstItem="8El-SO-ofb" firstAttribute="top" secondItem="HSB-8f-pYG" secondAttribute="bottom" constant="25" id="bgz-ej-HgI"/>
-                            <constraint firstItem="lYv-M4-m4j" firstAttribute="top" secondItem="ghE-7E-aXW" secondAttribute="top" constant="10" id="ej9-mi-Erp"/>
-                            <constraint firstItem="Pci-if-3Yi" firstAttribute="leading" secondItem="ghE-7E-aXW" secondAttribute="leading" constant="20" id="iZG-4e-saj"/>
-                            <constraint firstItem="Bu3-vT-cmH" firstAttribute="leading" secondItem="ghE-7E-aXW" secondAttribute="leading" constant="20" id="kER-58-dbP"/>
-                            <constraint firstItem="HSB-8f-pYG" firstAttribute="trailing" secondItem="U9P-bD-3u2" secondAttribute="trailing" constant="5" id="mzD-i5-fTg"/>
-                            <constraint firstItem="U9P-bD-3u2" firstAttribute="top" secondItem="HSB-8f-pYG" secondAttribute="top" id="tkH-AS-IaH"/>
+                            <constraint firstItem="HSB-8f-pYG" firstAttribute="top" secondItem="ghE-7E-aXW" secondAttribute="top" constant="40" id="1F0-wt-P8v"/>
+                            <constraint firstItem="ghE-7E-aXW" firstAttribute="trailing" secondItem="8El-SO-ofb" secondAttribute="trailing" constant="20" id="3KN-zh-PhV"/>
+                            <constraint firstItem="ghE-7E-aXW" firstAttribute="trailing" secondItem="Bu3-vT-cmH" secondAttribute="trailing" id="3lf-eW-Ul3"/>
+                            <constraint firstItem="ghE-7E-aXW" firstAttribute="bottom" secondItem="Pci-if-3Yi" secondAttribute="bottom" constant="40" id="4vV-o1-H8M"/>
+                            <constraint firstItem="qt3-jY-t4G" firstAttribute="top" secondItem="HSB-8f-pYG" secondAttribute="top" id="4ze-89-TmH"/>
+                            <constraint firstItem="ghE-7E-aXW" firstAttribute="trailing" secondItem="HSB-8f-pYG" secondAttribute="trailing" id="6t9-t3-duA"/>
+                            <constraint firstItem="8El-SO-ofb" firstAttribute="top" secondItem="HSB-8f-pYG" secondAttribute="bottom" constant="10" id="9dV-Je-u4Q"/>
+                            <constraint firstItem="HSB-8f-pYG" firstAttribute="leading" secondItem="ghE-7E-aXW" secondAttribute="leading" id="Cb0-2S-GtH"/>
+                            <constraint firstItem="U9P-bD-3u2" firstAttribute="leading" secondItem="8El-SO-ofb" secondAttribute="leading" id="EYX-7S-3Yc"/>
+                            <constraint firstItem="onJ-ir-lKV" firstAttribute="leading" secondItem="ghE-7E-aXW" secondAttribute="leading" constant="20" id="Fae-7s-Jhv"/>
+                            <constraint firstItem="Pci-if-3Yi" firstAttribute="leading" secondItem="ghE-7E-aXW" secondAttribute="leading" constant="20" id="P9H-Ns-IGm"/>
+                            <constraint firstItem="ghE-7E-aXW" firstAttribute="trailing" secondItem="lYv-M4-m4j" secondAttribute="trailing" id="WiZ-SV-HJU"/>
+                            <constraint firstItem="U9P-bD-3u2" firstAttribute="top" secondItem="qt3-jY-t4G" secondAttribute="bottom" constant="50.5" id="aTG-WN-0yn"/>
+                            <constraint firstItem="qt3-jY-t4G" firstAttribute="trailing" secondItem="HSB-8f-pYG" secondAttribute="trailing" id="brS-Gz-nkK"/>
+                            <constraint firstItem="lYv-M4-m4j" firstAttribute="leading" secondItem="ghE-7E-aXW" secondAttribute="leading" id="fef-Ok-WXn"/>
+                            <constraint firstItem="8El-SO-ofb" firstAttribute="leading" secondItem="onJ-ir-lKV" secondAttribute="trailing" constant="38" id="gWD-X5-maO"/>
+                            <constraint firstItem="onJ-ir-lKV" firstAttribute="top" secondItem="HSB-8f-pYG" secondAttribute="bottom" constant="17" id="odB-sy-in3"/>
+                            <constraint firstItem="qt3-jY-t4G" firstAttribute="leading" secondItem="HSB-8f-pYG" secondAttribute="leading" id="p0M-EE-5ej"/>
+                            <constraint firstItem="U9P-bD-3u2" firstAttribute="trailing" secondItem="8El-SO-ofb" secondAttribute="trailing" id="rlw-G7-hPO"/>
+                            <constraint firstItem="Bu3-vT-cmH" firstAttribute="leading" secondItem="ghE-7E-aXW" secondAttribute="leading" id="tjv-Pi-MoP"/>
+                            <constraint firstItem="Bu3-vT-cmH" firstAttribute="top" secondItem="HSB-8f-pYG" secondAttribute="bottom" constant="60" id="uQb-vw-9nI"/>
+                            <constraint firstItem="ghE-7E-aXW" firstAttribute="bottom" secondItem="Bu3-vT-cmH" secondAttribute="bottom" id="woQ-MU-YRX"/>
+                            <constraint firstItem="ghE-7E-aXW" firstAttribute="trailing" secondItem="Pci-if-3Yi" secondAttribute="trailing" constant="20" id="xvT-S5-lFe"/>
+                            <constraint firstItem="ghE-7E-aXW" firstAttribute="bottom" secondItem="HSB-8f-pYG" secondAttribute="bottom" constant="537" id="zJz-Q0-Crc"/>
+                            <constraint firstItem="ghE-7E-aXW" firstAttribute="top" secondItem="lYv-M4-m4j" secondAttribute="top" id="zbC-E2-QEX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="dnF-3g-BGA" userLabel="Search"/>
@@ -419,16 +464,16 @@
                                                         <constraint firstAttribute="height" constant="140" id="7EE-b8-jyK"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mekess speciality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B88-lf-0ff">
-                                                    <rect key="frame" x="10" y="86.5" width="394" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B88-lf-0ff">
+                                                    <rect key="frame" x="10" y="79" width="394" height="24"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="foul, tomate, a3dass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oh2-Ho-jys" userLabel="description">
-                                                    <rect key="frame" x="10" y="109.5" width="394" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oh2-Ho-jys" userLabel="description">
+                                                    <rect key="frame" x="10" y="105" width="394" height="25.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="21"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="pF6-Az-VPF">
@@ -550,6 +595,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon@" width="25" height="25"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

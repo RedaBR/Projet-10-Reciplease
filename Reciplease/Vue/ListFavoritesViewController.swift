@@ -19,31 +19,40 @@ class ListFavoritesViewController: UIViewController {
     
     @IBOutlet weak var ListFavTableView: UITableView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         ListFavTableView.delegate = self
         ListFavTableView.dataSource = self
-        getFetch()
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    override func viewDidAppear(_ animated: Bool) {
+        backUpList.removeAll()
+       
+
+        getFetch()
     }
+    
     var backUpList : [CoreDataRecipe] = []
-   
     
     func getFetch () {
-        
         CoreDataStack.sharedInstance.getProperties { (savedProperties) in
             backUpList.append(contentsOf: savedProperties)
             ListFavTableView.reloadData()
-            
-            
+            if backUpList.isEmpty {
+                presentAlert(with: "explications")
+               
+            }
         }
-        //CoreDataStack.sharedInstance.delete(recipeToDelete: backUpList[0])
+        
+    }
+    func presentAlert(with error: String) {
+        let alert = UIAlertController(title: "Erreur", message: error, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -55,16 +64,15 @@ extension ListFavoritesViewController : UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ListFavTableView.dequeueReusableCell(withIdentifier: "CustomFavCellTableViewCellID", for: indexPath) as! CustomFavCellTableViewCell
-        //let cell = ListFavTableView.dequeueReusableCell(withIdentifier:"FavListID") as! CustomFavCellTableViewCell
+        
         let recipeCoreData = backUpList[indexPath.row]
-        //cell.title?.text = recipeCoreData.title
+        
         cell.initFavCell(recipe: recipeCoreData)
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
+        
         let recipeCoreData = backUpList[indexPath.row]
         performSegue(withIdentifier: "segueToFavoritesDetails", sender:recipeCoreData )
     }

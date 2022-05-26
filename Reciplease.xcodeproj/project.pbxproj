@@ -16,12 +16,14 @@
 		9D437D0A28213D1000AF3E92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D437D0928213D1000AF3E92 /* Assets.xcassets */; };
 		9D437D0D28213D1000AF3E92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D437D0B28213D1000AF3E92 /* LaunchScreen.storyboard */; };
 		9D437D1828213D1000AF3E92 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437D1728213D1000AF3E92 /* RecipleaseTests.swift */; };
-		9D437D2328213D1000AF3E92 /* RecipleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437D2228213D1000AF3E92 /* RecipleaseUITests.swift */; };
 		9D437D3D282150EB00AF3E92 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437D3C282150EB00AF3E92 /* SearchViewController.swift */; };
 		9D437D422821519300AF3E92 /* ListRecipleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437D412821519300AF3E92 /* ListRecipleaseViewController.swift */; };
 		9D437D662821676000AF3E92 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437D652821676000AF3E92 /* DetailsViewController.swift */; };
 		9D437D6B2821687D00AF3E92 /* ListFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D437D6A2821687D00AF3E92 /* ListFavoritesViewController.swift */; };
 		9DBF728A283146A700490C4E /* CustomFavCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF7289283146A700490C4E /* CustomFavCellTableViewCell.swift */; };
+		9DC6CC4F283FB010001D24BF /* RecipeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DC6CC4E283FB010001D24BF /* RecipeData.json */; };
+		9DC6CC53283FB0D0001D24BF /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC6CC52283FB0D0001D24BF /* FakeResponseData.swift */; };
+		9DC6CC57283FC351001D24BF /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC6CC56283FC351001D24BF /* URLSessionFake.swift */; };
 		9DC744EA2833EC75002E89A1 /* FavoritesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC744E92833EC75002E89A1 /* FavoritesDetailsViewController.swift */; };
 		9DCF0C982825C597008C96F4 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCF0C972825C597008C96F4 /* CustomCellTableViewCell.swift */; };
 		9DDB0495282F2904009360F2 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ADD3A282C694E00035CEB /* Reciplease.xcdatamodeld */; };
@@ -32,13 +34,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		9D437D1428213D1000AF3E92 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D437CF228213D0800AF3E92 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D437CF928213D0800AF3E92;
-			remoteInfo = Reciplease;
-		};
-		9D437D1F28213D1000AF3E92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9D437CF228213D0800AF3E92 /* Project object */;
 			proxyType = 1;
@@ -62,14 +57,14 @@
 		9D437D1328213D1000AF3E92 /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D437D1728213D1000AF3E92 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
 		9D437D1928213D1000AF3E92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D437D1E28213D1000AF3E92 /* RecipleaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D437D2228213D1000AF3E92 /* RecipleaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITests.swift; sourceTree = "<group>"; };
-		9D437D2428213D1000AF3E92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D437D3C282150EB00AF3E92 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Reciplease/Vue/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		9D437D412821519300AF3E92 /* ListRecipleaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListRecipleaseViewController.swift; path = Reciplease/Vue/ListRecipleaseViewController.swift; sourceTree = SOURCE_ROOT; };
 		9D437D652821676000AF3E92 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailsViewController.swift; path = Reciplease/Vue/DetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		9D437D6A2821687D00AF3E92 /* ListFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListFavoritesViewController.swift; path = Reciplease/Vue/ListFavoritesViewController.swift; sourceTree = SOURCE_ROOT; };
 		9DBF7289283146A700490C4E /* CustomFavCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomFavCellTableViewCell.swift; path = Reciplease/Vue/CustomFavCellTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		9DC6CC4E283FB010001D24BF /* RecipeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RecipeData.json; sourceTree = "<group>"; };
+		9DC6CC52283FB0D0001D24BF /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
+		9DC6CC56283FC351001D24BF /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
 		9DC744E92833EC75002E89A1 /* FavoritesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesDetailsViewController.swift; path = Reciplease/Vue/FavoritesDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
 		9DCF0C972825C597008C96F4 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
 		9DF4E45328257BBF007C378A /* PropertiesReciplease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PropertiesReciplease.swift; path = Reciplease/Controller/PropertiesReciplease.swift; sourceTree = SOURCE_ROOT; };
@@ -86,13 +81,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9D437D1028213D1000AF3E92 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9D437D1B28213D1000AF3E92 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -117,7 +105,6 @@
 			children = (
 				9D437CFC28213D0800AF3E92 /* Reciplease */,
 				9D437D1628213D1000AF3E92 /* RecipleaseTests */,
-				9D437D2128213D1000AF3E92 /* RecipleaseUITests */,
 				9D437CFB28213D0800AF3E92 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,7 +114,6 @@
 			children = (
 				9D437CFA28213D0800AF3E92 /* Reciplease.app */,
 				9D437D1328213D1000AF3E92 /* RecipleaseTests.xctest */,
-				9D437D1E28213D1000AF3E92 /* RecipleaseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,17 +134,11 @@
 			children = (
 				9D437D1728213D1000AF3E92 /* RecipleaseTests.swift */,
 				9D437D1928213D1000AF3E92 /* Info.plist */,
+				9DC6CC4E283FB010001D24BF /* RecipeData.json */,
+				9DC6CC52283FB0D0001D24BF /* FakeResponseData.swift */,
+				9DC6CC56283FC351001D24BF /* URLSessionFake.swift */,
 			);
 			path = RecipleaseTests;
-			sourceTree = "<group>";
-		};
-		9D437D2128213D1000AF3E92 /* RecipleaseUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9D437D2228213D1000AF3E92 /* RecipleaseUITests.swift */,
-				9D437D2428213D1000AF3E92 /* Info.plist */,
-			);
-			path = RecipleaseUITests;
 			sourceTree = "<group>";
 		};
 		9D437D3628214E1F00AF3E92 /* Model */ = {
@@ -237,24 +217,6 @@
 			productReference = 9D437D1328213D1000AF3E92 /* RecipleaseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9D437D1D28213D1000AF3E92 /* RecipleaseUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9D437D2D28213D1000AF3E92 /* Build configuration list for PBXNativeTarget "RecipleaseUITests" */;
-			buildPhases = (
-				9D437D1A28213D1000AF3E92 /* Sources */,
-				9D437D1B28213D1000AF3E92 /* Frameworks */,
-				9D437D1C28213D1000AF3E92 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9D437D2028213D1000AF3E92 /* PBXTargetDependency */,
-			);
-			name = RecipleaseUITests;
-			productName = RecipleaseUITests;
-			productReference = 9D437D1E28213D1000AF3E92 /* RecipleaseUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -268,10 +230,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					9D437D1228213D1000AF3E92 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 9D437CF928213D0800AF3E92;
-					};
-					9D437D1D28213D1000AF3E92 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 9D437CF928213D0800AF3E92;
 					};
@@ -292,7 +250,6 @@
 			targets = (
 				9D437CF928213D0800AF3E92 /* Reciplease */,
 				9D437D1228213D1000AF3E92 /* RecipleaseTests */,
-				9D437D1D28213D1000AF3E92 /* RecipleaseUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -312,13 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9D437D1C28213D1000AF3E92 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				9DC6CC4F283FB010001D24BF /* RecipeData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,15 +303,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC6CC57283FC351001D24BF /* URLSessionFake.swift in Sources */,
 				9D437D1828213D1000AF3E92 /* RecipleaseTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9D437D1A28213D1000AF3E92 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9D437D2328213D1000AF3E92 /* RecipleaseUITests.swift in Sources */,
+				9DC6CC53283FB0D0001D24BF /* FakeResponseData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,11 +316,6 @@
 			isa = PBXTargetDependency;
 			target = 9D437CF928213D0800AF3E92 /* Reciplease */;
 			targetProxy = 9D437D1428213D1000AF3E92 /* PBXContainerItemProxy */;
-		};
-		9D437D2028213D1000AF3E92 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D437CF928213D0800AF3E92 /* Reciplease */;
-			targetProxy = 9D437D1F28213D1000AF3E92 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -599,44 +539,6 @@
 			};
 			name = Release;
 		};
-		9D437D2E28213D1000AF3E92 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RecipleaseUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Openclassrooms.RecipleaseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Reciplease;
-			};
-			name = Debug;
-		};
-		9D437D2F28213D1000AF3E92 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RecipleaseUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Openclassrooms.RecipleaseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Reciplease;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -663,15 +565,6 @@
 			buildConfigurations = (
 				9D437D2B28213D1000AF3E92 /* Debug */,
 				9D437D2C28213D1000AF3E92 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9D437D2D28213D1000AF3E92 /* Build configuration list for PBXNativeTarget "RecipleaseUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9D437D2E28213D1000AF3E92 /* Debug */,
-				9D437D2F28213D1000AF3E92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

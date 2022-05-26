@@ -9,6 +9,10 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
+    var object : CoreDataRecipe?
+    var isFav = false
+   
+    
     @IBOutlet weak var titleRecip: UILabel!
     @IBOutlet weak var list: UITextView!
     @IBOutlet weak var mainImage: UIImageView!
@@ -16,17 +20,17 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var likeLabel: UILabel!
     
     var recipe:PropertiesReciplease?
-    var isFav = false
-    var objectModel:CoreDataRecipe?
     
     @IBAction func addFav() {
-        if (isFav) {
-            CoreDataStack.sharedInstance.replace(sameRecipe: self.objectModel!)
-        }else{
             save()
-        }
     }
+    
     func save () {
+        
+        if (isFav == true) {
+            presentAlert(with: "already in fav")
+            return
+        }
         
         let properties = CoreDataRecipe(context: CoreDataStack.sharedInstance.viewContext)
         properties.title = recipe!.title
@@ -34,23 +38,34 @@ class DetailsViewController: UIViewController {
         properties.imageUrl = recipe!.imageUrl
         properties.likeCount = Int16(recipe!.likeCount)
         properties.time = Int16(recipe!.time)
+        
         let ingredientsLines = recipe?.ingredLines
         let listIngred = ingredientsLines?.joined(separator: "\n")
         properties.ingredLines = listIngred
+        
+        properties.uri = recipe?.uri
         do {
             try CoreDataStack.sharedInstance.viewContext.save()
+            isFav = true
         }
         catch {
+            presentAlert(with: error.localizedDescription)
         }
-        
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        CoreDataStack.sharedInstance.getPropertieWithTitle(uri: recipe?.uri ?? "") { (recipes) in
+            if recipes.count>0 {
+                isFav = true
+                object = recipes.first
+            }
+            else {
+                isFav = false
+            }
+
+        }
         let imageUrl:URL = URL(string: recipe!.imageUrl)!
         DispatchQueue.global(qos: .userInitiated).async {
             let imageData:NSData = NSData(contentsOf: imageUrl)!
@@ -70,18 +85,15 @@ class DetailsViewController: UIViewController {
         
         timeLabel.text = String(recipe!.time)
         
-        
-        CoreDataStack.sharedInstance.getPropertieWithTitle(title: self.recipe!.title) { (recipes) in
-            
-            //self.isFav = (recipes.count > 0)
-            if (recipes.count > 0) {
-                //existe deja
-                self.isFav = true
-                self.objectModel = recipes.first
-            } else{
-                // existe pas
-                self.isFav = false
-            }
-        }
     }
+    
+    func presentAlert(with msg: String) {
+        let alert = UIAlertController(title: "Erreur", message: msg, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
 }

@@ -38,10 +38,11 @@ class CoreDataStack {
         }
     }
     
-    func getPropertieWithTitle(title:String, completion: ([CoreDataRecipe]) -> Void) {
+    func getPropertieWithTitle(uri:String, completion: ([CoreDataRecipe]) -> Void) {
         let request: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
         
-        request.predicate = NSPredicate(format: "title == %@", title)
+        request.predicate = NSPredicate(format: "uri == %@", uri )
+        
         do {
             let properties = try CoreDataStack.sharedInstance.viewContext.fetch(request)
             try CoreDataStack.sharedInstance.viewContext.save()

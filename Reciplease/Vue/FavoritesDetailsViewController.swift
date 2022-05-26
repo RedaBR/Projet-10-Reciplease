@@ -8,7 +8,7 @@
 import UIKit
 
 class FavoritesDetailsViewController: UIViewController {
-
+    
     @IBOutlet weak var detailsTitle: UILabel!
     @IBOutlet weak var detailsList: UITextView!
     @IBOutlet weak var imgDetails: UIImageView!
@@ -17,14 +17,14 @@ class FavoritesDetailsViewController: UIViewController {
     
     @IBAction func deleteInFav() {
         CoreDataStack.sharedInstance.delete(recipeToDelete: recipe!)
-      
+        
     }
     
     var recipe : CoreDataRecipe?
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-
-}
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -45,15 +45,14 @@ class FavoritesDetailsViewController: UIViewController {
         
         likeLabel.text = String(recipe!.likeCount)
         timeLabel.text = String(recipe!.time)
-       
         
     }
     
     func getRecipeToDelete () {
         
-        CoreDataStack.sharedInstance.getPropertieWithTitle(title: (recipe?.title)!) { (recipeToDelete) in
+        CoreDataStack.sharedInstance.getPropertieWithTitle(uri: (recipe?.uri)!) { (recipeToDelete) in
             recipe = recipeToDelete.first
         }
     }
-
+    
 }

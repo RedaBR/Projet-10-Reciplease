@@ -17,33 +17,23 @@ class CustomFavCellTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeIcon: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     func initFavCell (recipe:CoreDataRecipe) {
         titre.text = recipe.title
         let imageUrl:URL = URL(string: recipe.imageUrl!)!
         DispatchQueue.global(qos: .userInitiated).async {
-            
-            let imageData:NSData = NSData(contentsOf: imageUrl)!
-            
-            DispatchQueue.main.async {
-                let image = UIImage(data: imageData as Data)
-                self.mainImg.image = image
+            do {
+                let imageData:NSData = try NSData(contentsOf: imageUrl)
+                
+                DispatchQueue.main.async {
+                    let image = UIImage(data: imageData as Data)
+                    self.mainImg.image = image
+                }
             }
-    }
+            catch {
+            }
+        }
         descriptionLabel.text = recipe.descript
         likeLabel.text = String(recipe.likeCount)
         timeLabel.text = String(recipe.time)
-      
-        
-        
-        
-        
-        
     }
 }

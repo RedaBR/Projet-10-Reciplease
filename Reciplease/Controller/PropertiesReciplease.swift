@@ -16,4 +16,5 @@ class PropertiesReciplease {
     var likeCount = 0
     var time = 0
     var ingredLines = [""]
+    var uri = ""
 }
