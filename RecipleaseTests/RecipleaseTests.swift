@@ -6,77 +6,82 @@
 //
 
 import XCTest
+
 @testable import Reciplease
 
 class RecipleaseTests: XCTestCase {
 
     func testGetRecipeShouldPostFailedCallbackIfError() {
         // Given
-        let translate = RecipleaseService(session:URLSessionFake(data: <#T##Data?#>, error: <#T##Error?#>, response: <#T##URLResponse?#>)
+        let recipe = RecipleaseService(session: URLSessionFake(data: nil, error: FakeResponseDate.error, response: nil))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        translate.getTranslate(text:nil) {(data, success)in
-        // Then
-        XCTAssertFalse(success)
-        XCTAssertNil(data)
-        expectation.fulfill()
+        recipe.getReciplease(ingredients:nil) { (data, success, error) in
+            XCTAssertFalse(success)
+            XCTAssertNil(data)
+            expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 2)
+        
+        wait(for: [expectation], timeout: 4)
     }
     
     func testGetRecipeShouldPostFailedCallbackIfNoData() {
         // Given
-        let translate = RecipleaseService(session:URLSessionFake(data:nil, error:nil, response:nil))
+        let recipe = RecipleaseService(session:URLSessionFake(data:nil, error:nil, response:nil))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        translate.getTranslate(text: nil) {(data, success)in
-        
-        // Then
-        XCTAssertFalse(success)
-        XCTAssertNil(data)
-        expectation.fulfill()
+        recipe.getReciplease(ingredients: nil) { (data, sucess, error) in
+            // Then
+            XCTAssertFalse(sucess)
+            XCTAssertNil(data)
+            expectation.fulfill()
+
         }
-        wait(for: [expectation], timeout: 0.01)
+        
+        wait(for: [expectation], timeout: 4)
     }
     
     func testGetRecipeShouldPostFailedCallbackIfIncorrectResponse() {
         // Given
-        let translate = RecipleaseService(session:URLSessionFake(data:FakeResponseDate().correctTranslateData, error:nil, response:FakeResponseDate().responseKO))
+        let recipe = RecipleaseService(session:URLSessionFake(data:FakeResponseDate().correctTranslateData, error:nil, response:FakeResponseDate().responseKO))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        translate.getTranslate(text: nil) {(data, success)in
-        // Then
-        XCTAssertTrue(success)
-        XCTAssertNotNil(data)
-        expectation.fulfill()
+        recipe.getReciplease(ingredients: nil) { (data, sucess, error) in
+            // Then
+            XCTAssertTrue(sucess)
+            XCTAssertNotNil(data)
+            expectation.fulfill()
+
         }
-        wait(for: [expectation], timeout: 0.01)
+        
+        wait(for: [expectation], timeout: 1)
     }
     
     func testGetRecipeShouldPostFailedCallbackIfIncorrectData() {
         // Given
-        let translate = RecipleaseService(session:URLSessionFake(data:FakeResponseDate().incorrectData, error:nil, response:FakeResponseDate().responseOK))
+        let recipe = RecipleaseService(session:URLSessionFake(data:FakeResponseDate().incorrectData, error:nil, response:FakeResponseDate().responseOK))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        translate.getTranslate(text: nil) {(data, success)in
-        // Then
-        XCTAssertFalse(success)
-        XCTAssertNil(data)
-        expectation.fulfill()
+        recipe.getReciplease(ingredients: nil) { (data, success, error) in
+            // Then
+            XCTAssertFalse(success)
+            XCTAssertNil(data)
+            expectation.fulfill()
         }
+      
         wait(for: [expectation], timeout: 0.01)
     }
     
     func testRecipeShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
-        let translatedText = "the big tower"
+        let ingredients = "tomate"
         // Given
-        let translate = RecipleaseService(session:URLSessionFake(data:FakeResponseDate().correctTranslateData, error:nil, response:FakeResponseDate().responseOK))
+        let recipe = RecipleaseService(session:URLSessionFake(data:FakeResponseDate().correctTranslateData, error:nil, response:FakeResponseDate().responseOK))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        translate.getTranslate(text:translatedText) {(succes,data)in
+        recipe.getReciplease(ingredients:ingredients) {(data,success,error)in
         
         // Then
-        XCTAssertTrue((succes != nil))
+        XCTAssertTrue((success != nil))
         XCTAssertNotNil(data)
         expectation.fulfill()
         }

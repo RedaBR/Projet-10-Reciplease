@@ -53,20 +53,17 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     private func addIngred() {
         guard
-            var ingredientsName = ingredients.text,
+            let ingredientsName = ingredients.text,
             var IngredList = listIngred.text
         else { return }
         
         IngredList += ingredientsName + "\n"
         listIngred.text = IngredList
-       
     }
     
   
     
     private func getResult() {
-        
-    
         
         RecipleaseService.shared.getReciplease(ingredients: listIngred.text!) { (info, true,error) in
             // creation d'une instance unique de PropertiesRecipeService 
