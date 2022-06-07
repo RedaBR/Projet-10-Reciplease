@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+// MARK:- Custom Cell List
 class CustomCellTableViewCell: UITableViewCell {
     
     @IBOutlet weak var mainImg: UIImageView!

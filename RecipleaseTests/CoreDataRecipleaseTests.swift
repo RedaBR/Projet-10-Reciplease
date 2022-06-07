@@ -11,11 +11,12 @@ import XCTest
 class CoreDataRecipleaseTests: XCTestCase {
 
     func testGetProperties () {
+// initialisation du context de CoreDataRecipe qui herite de NSManagedObject qui a  un init context de type NSManagedObjectContext
+        
         let properties = CoreDataRecipe(context: CoreDataStack.sharedInstance.viewContext)
         properties.uri = "toto"
-        
         do {
-             try CoreDataStack.sharedInstance.viewContext.save()
+             try MockCoreData().viewContext.save()
         }
         catch {
             print(error.localizedDescription)
@@ -28,24 +29,21 @@ class CoreDataRecipleaseTests: XCTestCase {
     
     func testDeleteRecipeToDataBase () {
         let properties = CoreDataRecipe(context: CoreDataStack.sharedInstance.viewContext)
-        
         properties.uri = "toto"
         var object = CoreDataRecipe()
         do {
-             try CoreDataStack.sharedInstance.viewContext.save()
+             try MockCoreData().viewContext.save()
         }
         catch {
             print(error.localizedDescription)
         }
-        CoreDataStack.sharedInstance.getProperties { (recipes) in
+        CoreDataStack.sharedInstance.getPropertieWithTitle(uri: properties.uri!, completion: {(recipes) in
             object = recipes.first!
-        }
+        })
         CoreDataStack.sharedInstance.delete(recipeToDelete:object)
         
         CoreDataStack.sharedInstance.getProperties { (recipe) in
             XCTAssertFalse(recipe.first?.uri == "toto")
         }
-     
     }
-    
 }

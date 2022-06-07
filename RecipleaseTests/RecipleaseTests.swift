@@ -10,7 +10,7 @@ import XCTest
 @testable import Reciplease
 
 class RecipleaseTests: XCTestCase {
-
+// creations d'une methode qui simule une une URLSession 
     func testGetRecipeShouldPostFailedCallbackIfError() {
         // Given
         let recipe = RecipleaseService(session: URLSessionFake(data: nil, error: FakeResponseDate.error, response: nil))

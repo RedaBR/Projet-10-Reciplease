@@ -6,9 +6,9 @@
 //
 
 import UIKit
+// MARK:- View Table List Recip Management
 
 class ListRecipleaseViewController: UIViewController {
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToDetails" {
             let successVC = segue.destination as? DetailsViewController
@@ -26,7 +26,7 @@ class ListRecipleaseViewController: UIViewController {
     @IBOutlet weak var listReciplease: UITableView!
     
 }
-
+// MARK:- DataSourceDelegate
 extension ListRecipleaseViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         PropertiesRecipService.shared.listRecip.count

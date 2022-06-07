@@ -13,7 +13,6 @@ struct InfosReciplease: Codable {
         case hits
     }
 }
-
 // MARK: - Hit
 struct Hit: Codable {
     let recipe: Recipe?

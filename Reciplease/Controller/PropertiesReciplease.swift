@@ -9,7 +9,6 @@ import Foundation
 import CoreData
 
 class PropertiesReciplease {
-    
     var title = ""
     var descrip = ""
     var imageUrl = ""
