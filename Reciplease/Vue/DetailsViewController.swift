@@ -46,7 +46,7 @@ class DetailsViewController: UIViewController {
             presentAlert(with: error.localizedDescription)
         }
     }
-    
+    // MARK:- Check if recipe with element with identified value
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         CoreDataStack.sharedInstance.getPropertieWithTitle(uri: recipe?.uri ?? "") { (recipes) in
@@ -58,6 +58,8 @@ class DetailsViewController: UIViewController {
                 isFav = false
             }
         }
+        
+        // MARK:- Association of view elements with network call properties
         let imageUrl:URL = URL(string: recipe!.imageUrl)!
         DispatchQueue.global(qos: .userInitiated).async {
             let imageData:NSData = NSData(contentsOf: imageUrl)!
