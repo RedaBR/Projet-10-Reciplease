@@ -22,6 +22,7 @@ class DetailsViewController: UIViewController {
     @IBAction func addFav() {
             save()
     }
+    
     // MARK:- Save to CoreData
     func save () {
         if (isFav == true) {

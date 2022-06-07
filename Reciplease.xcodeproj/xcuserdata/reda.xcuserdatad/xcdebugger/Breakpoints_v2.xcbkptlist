@@ -46,8 +46,8 @@
             filePath = "Reciplease/Vue/DetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
             <Locations>
@@ -158,8 +158,8 @@
             filePath = "Reciplease/Vue/DetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "save()"
             landmarkType = "7">
          </BreakpointContent>
