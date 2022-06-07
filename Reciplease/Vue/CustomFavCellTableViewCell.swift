@@ -19,19 +19,19 @@ class CustomFavCellTableViewCell: UITableViewCell {
     
     func initFavCell (recipe:CoreDataRecipe) {
         titre.text = recipe.title
-        let imageUrl:URL = URL(string: recipe.imageUrl!)!
-        DispatchQueue.global(qos: .userInitiated).async {
-            do {
-                let imageData:NSData = try NSData(contentsOf: imageUrl)
-                
-                DispatchQueue.main.async {
-                    let image = UIImage(data: imageData as Data)
-                    self.mainImg.image = image
-                }
-            }
-            catch {
-            }
-        }
+//        let imageUrl:URL = URL(string: recipe.imageUrl!)!
+//        DispatchQueue.global(qos: .userInitiated).async {
+//            do {
+//                let imageData:NSData = try NSData(contentsOf: imageUrl)
+//
+//                DispatchQueue.main.async {
+//                    let image = UIImage(data: imageData as Data)
+//                    self.mainImg.image = image
+//                }
+//            }
+//            catch {
+//            }
+//        }
         descriptionLabel.text = recipe.descript
         likeLabel.text = String(recipe.likeCount)
         timeLabel.text = String(recipe.time)

@@ -39,8 +39,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBAction func deleteIngred() {
        
         var words = listIngred.text.components(separatedBy: "\n")
+        if words.contains("") {
+           let index =  words.lastIndex(of: "")
+            words.remove(at: index!)
+        }
+        if words.isEmpty == false {
         words.removeLast()
-       // words.removeLast()
+        }
         listIngred.text = words.joined(separator: "\n")
     }
         

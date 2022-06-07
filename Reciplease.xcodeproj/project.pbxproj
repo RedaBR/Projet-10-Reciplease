@@ -30,6 +30,7 @@
 		9DDB0495282F2904009360F2 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ADD3A282C694E00035CEB /* Reciplease.xcdatamodeld */; };
 		9DF4E45428257BBF007C378A /* PropertiesReciplease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4E45328257BBF007C378A /* PropertiesReciplease.swift */; };
 		9DF4E45C28257D2B007C378A /* PropertiesRecipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4E45B28257D2B007C378A /* PropertiesRecipService.swift */; };
+		9DF4E572284F5510001FC8ED /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF4E571284F5510001FC8ED /* DataBaseManager.swift */; };
 		9DFD4871282DADE400F56BA6 /* CoreDataRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD4870282DADE400F56BA6 /* CoreDataRecipe.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		9DCF0C972825C597008C96F4 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
 		9DF4E45328257BBF007C378A /* PropertiesReciplease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PropertiesReciplease.swift; path = Reciplease/Controller/PropertiesReciplease.swift; sourceTree = SOURCE_ROOT; };
 		9DF4E45B28257D2B007C378A /* PropertiesRecipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesRecipService.swift; sourceTree = "<group>"; };
+		9DF4E571284F5510001FC8ED /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		9DFD4870282DADE400F56BA6 /* CoreDataRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRecipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 				9D1ADD3A282C694E00035CEB /* Reciplease.xcdatamodeld */,
 				9D1ADD40282C69C400035CEB /* CoreDataStack.swift */,
 				9DFD4870282DADE400F56BA6 /* CoreDataRecipe.swift */,
+				9DF4E571284F5510001FC8ED /* DataBaseManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				9DF4E45C28257D2B007C378A /* PropertiesRecipService.swift in Sources */,
 				9DDB0495282F2904009360F2 /* Reciplease.xcdatamodeld in Sources */,
 				9D437D6B2821687D00AF3E92 /* ListFavoritesViewController.swift in Sources */,
+				9DF4E572284F5510001FC8ED /* DataBaseManager.swift in Sources */,
 				9D437CFE28213D0800AF3E92 /* AppDelegate.swift in Sources */,
 				9DC744EA2833EC75002E89A1 /* FavoritesDetailsViewController.swift in Sources */,
 				9D1ADD41282C69C400035CEB /* CoreDataStack.swift in Sources */,

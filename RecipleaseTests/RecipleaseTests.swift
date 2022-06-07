@@ -69,7 +69,7 @@ class RecipleaseTests: XCTestCase {
             expectation.fulfill()
         }
       
-        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation], timeout: 1)
     }
     
     func testRecipeShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
@@ -85,7 +85,7 @@ class RecipleaseTests: XCTestCase {
         XCTAssertNotNil(data)
         expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation], timeout: 1)
     }
 
 }
