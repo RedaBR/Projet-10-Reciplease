@@ -25,12 +25,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         getResult()
     }
     
-    @IBOutlet weak var ingredients: UITextField!
     // MARK:- Add Ingred to List for get Recip
+    @IBOutlet weak var ingredients: UITextField!
     @IBAction func addIngredToList() {
         addIngred()
         ingredients.text = ""
     }
+    
     // MARK:- delete ingred to list for Recip
     @IBAction func deleteIngred() {
         
@@ -44,7 +45,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         }
         listIngred.text = words.joined(separator: "\n")
     }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         textField.resignFirstResponder()
         return true
@@ -58,6 +58,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         IngredList += ingredientsName + "\n"
         listIngred.text = IngredList
     }
+    
     // MARK:- Get Recipes in fuction of ingred add to list 
     private func getResult() {
         RecipleaseService.shared.getReciplease(ingredients: listIngred.text!) { (info, true,error) in
@@ -95,7 +96,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         // rassemblement des élements du tableau desc en les séparant d'une virugule et une espace
         let description = desc.joined(separator: ", ")
         let imageUrl = hit.recipe?.image ?? ""
-        let likeCount = 0
         let time = hit.recipe?.totalTime ?? 0
         let ingredLines = hit.recipe?.ingredientLines ?? [""]
         let uri = hit.recipe?.uri
@@ -110,5 +110,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         // on retourne l'instance avec les propriétés valorisés
         return recip
     }
+    
 }
 

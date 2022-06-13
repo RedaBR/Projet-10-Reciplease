@@ -16,11 +16,12 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var list: UITextView!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var likeLabel: UILabel!
+
     var recipe:PropertiesReciplease?
     
     @IBAction func addFav() {
             save()
+        
     }
     
     // MARK:- Save to CoreData
@@ -47,6 +48,7 @@ class DetailsViewController: UIViewController {
             presentAlert(with: error.localizedDescription)
         }
     }
+    
     // MARK:- Check if recipe with element with identified value
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -75,7 +77,7 @@ class DetailsViewController: UIViewController {
         let listIngred = ingredientsLines?.joined(separator: "\n")
         list.text = listIngred
         
-        likeLabel.text = String(recipe!.likeCount)
+      
         
         timeLabel.text = String(recipe!.time)
         

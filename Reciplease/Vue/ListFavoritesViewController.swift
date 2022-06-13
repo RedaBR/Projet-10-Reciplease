@@ -8,19 +8,28 @@
 import UIKit
 // MARK:- List of Favorites
 class ListFavoritesViewController: UIViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToFavoritesDetails" {
-            let successVC = segue.destination as? FavoritesDetailsViewController
-            let recip = sender as! CoreDataRecipe
-            successVC?.recipe = recip
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "segueToFavoritesDetails" {
+//            let successVC = segue.destination as? FavoritesDetailsViewController
+//            let recip = sender as! CoreDataRecipe
+//            successVC?.recipe = recip
+//
+//        }
+//
+//    }
+   
+   
     @IBOutlet weak var ListFavTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ListFavTableView.delegate = self
         ListFavTableView.dataSource = self
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         backUpList.removeAll()
         getFetch()
@@ -63,7 +72,9 @@ extension ListFavoritesViewController : UITableViewDataSource, UITableViewDelega
     // methode pour géer l'appuie sur une cellule ( selection )
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recipeCoreData = backUpList[indexPath.row]
-        performSegue(withIdentifier: "segueToFavoritesDetails", sender:recipeCoreData )
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FavoritesDetailsID") as! FavoritesDetailsViewController
+        vc.recipe = recipeCoreData
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

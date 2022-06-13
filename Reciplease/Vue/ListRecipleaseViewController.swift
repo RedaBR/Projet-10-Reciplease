@@ -9,6 +9,7 @@ import UIKit
 // MARK:- View Table List Recip Management
 
 class ListRecipleaseViewController: UIViewController {
+    // methode de passage de donnée de controleur à l'autre  avec pour paramétre sender qui est l'objet d'ou part le segue 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToDetails" {
             let successVC = segue.destination as? DetailsViewController
@@ -20,12 +21,11 @@ class ListRecipleaseViewController: UIViewController {
         super.viewDidLoad()
         self.listReciplease.dataSource = self
         self.listReciplease.delegate = self
-        
     }
-   
     @IBOutlet weak var listReciplease: UITableView!
     
 }
+
 // MARK:- DataSourceDelegate
 extension ListRecipleaseViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,10 +44,7 @@ extension ListRecipleaseViewController : UITableViewDataSource, UITableViewDeleg
         let recipe = PropertiesRecipService.shared.listRecip[indexPath.row]
         
         performSegue(withIdentifier: "segueToDetails", sender: recipe)
-     
-        
     }
-    
     
 }
 
