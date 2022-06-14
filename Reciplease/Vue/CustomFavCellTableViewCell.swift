@@ -15,7 +15,7 @@ class CustomFavCellTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeIcon: UIImageView!
     
-    // methode pour associé les élemens de la vue avec les élemens recupérés lors de l'appel reseau
+    // Associate elements of view to elements of CoreData 
     func initFavCell (recipe:CoreDataRecipe) {
         titre.text = recipe.title
         let imageUrl:URL = URL(string: recipe.imageUrl!)!

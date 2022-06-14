@@ -9,19 +9,21 @@ import Foundation
 // MARK: - URL Session Fake
 
 class URLSessionFake : URLSession {
-    // creation d'une fake URLSession  avec ses propriétés
+   
     var data : Data?
     var error : Error?
     var response : URLResponse?
-    // initialisateur pour pouvoir les associés aux valeurs desirés
+    
+    //initializer to be able to associate them with the desired values
     init(data:Data?, error:Error?, response:URLResponse?) {
         self.data=data
         self.error=error
         self.response = response
     }
-    // override de le fonction dataTaske nécéssaire a la gestion de la reponse lors notre appel reseaux
+    
+    //override of the dataTaske function necessary to manage the response during our network call
     override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-        // on associe les paramétes de la closure qui gere la reponse aux nos fausse proprités
+        // associate the parameters of the closure that manages the response to our false properties
         let task = URLSessionDataTaskFake()
         task.callback = completionHandler
         task.data = data
@@ -32,15 +34,13 @@ class URLSessionFake : URLSession {
 }
 // MARK: - URL Session Data Tak Fake
 
-// creation d'une fausse classe URLSessionDataTask"Fake" de type veritable class URLSessionDataTask
+// Creation of a fake class URLSessionDataTask"Fake" of type real class URLSessionDataTask
 class URLSessionDataTaskFake : URLSessionDataTask {
-    // override de la variable avec comme type la closure avec les paramétés nécessaire pour lancer la tache
     var callback : ((Data?,URLResponse?,Error?)->Void)?
-    // associations de nos fausse propriétés au proprités de le class
     var data : Data?
     var urlResponse : URLResponse?
     var responseError : Error?
-    // lancement de la tache avec nos fausse propriétés 
+    // launch of the task with our false properties
     override func resume() {
         callback?(data, urlResponse, responseError)
     }

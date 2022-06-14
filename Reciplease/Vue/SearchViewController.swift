@@ -34,15 +34,17 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     // MARK:- delete ingred to list for Recip
     @IBAction func deleteIngred() {
-        
+        // split list ingred
         var words = listIngred.text.components(separatedBy: "\n")
         if words.contains("") {
             let index =  words.lastIndex(of: "")
             words.remove(at: index!)
         }
+        // delete lase ingred to list
         if words.isEmpty == false {
             words.removeLast()
         }
+        // join list ingred to display
         listIngred.text = words.joined(separator: "\n")
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
@@ -62,30 +64,29 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     // MARK:- Get Recipes in fuction of ingred add to list 
     private func getResult() {
         RecipleaseService.shared.getReciplease(ingredients: listIngred.text!) { (info, true,error) in
-            // creation d'une instance unique de PropertiesRecipeService 
             let sharedPropertiesRecipe = PropertiesRecipService.shared
-            // on nettoie le tableau de ce qu'il contenait précédement pour enlever les recettes des appels précédent
+            // clear old items to list
             sharedPropertiesRecipe.clearList()
-            // on recupére hits qui est  un tableau contenant toutes les recettes reparties en élément  numérotés d'indice avec chaque élement les propriétés detaillés de la recette sinon on renvoir un tableau vide
+            // recovery recipes in list
             let hits = info?.hits ?? []
             
-            // creation d'une boucle for qui parcours hits et et pour chaque élément de hits on recupére les proprirté avec la methode getPropertiesRecipleaseForHit
             for hit in hits {
                 let recip = self.getPropertiesRecipleaseForHit(hit: hit)
-                // on rajoute le resulatat au tableau addList qu'on va utiliser pour customiser nos celle pour la liste des recettes
+                //  add result to the addList table that we will use to customize cell
                 sharedPropertiesRecipe.addList(list: recip)
             }
-            // on isntancie la classe ListRecipleaseViewController pour appler la methode presente pour transition 
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListRecipleaseViewControllerID") as! ListRecipleaseViewController
-            self.present(vc, animated: true, completion: nil)
+            // instantiate ListRecipleaseViewController
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListRecipleaseViewControllerID") as? ListRecipleaseViewController
+            
+            self.present(vc!, animated: true, completion: nil)
         }
     }
     
-    // methode pour recupérer les propriétés de l'appel reseaux avec pour paraméte HIT qui cotient les propriétés de la rectette
+    // method to retrieve the properties of the network call
     func getPropertiesRecipleaseForHit(hit:Hit) -> PropertiesReciplease {
         let title =  hit.recipe?.label ?? ""
         
-        // le propriété voulue est dans une tableau donc création d'une boucle for qui parcour le tableau et recupére l'elément food qui est mis dans le tableauc desc
+        // retrieve the properties of the network call
         var desc:[String] = []
         let ingredients = hit.recipe?.ingredients ?? []
         for ing in ingredients {
@@ -93,13 +94,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                 desc.append(ing.food!)
             }
         }
-        // rassemblement des élements du tableau desc en les séparant d'une virugule et une espace
         let description = desc.joined(separator: ", ")
         let imageUrl = hit.recipe?.image ?? ""
         let time = hit.recipe?.totalTime ?? 0
         let ingredLines = hit.recipe?.ingredientLines ?? [""]
         let uri = hit.recipe?.uri
-        // instance de PropertiesReciplease pour pour valoriser les propriétés de la classe avec les élements récupérés via l'appel reseaux
+        // Put the result of nertwork call in properties of PropertiesReciplease
         let recip =  PropertiesReciplease()
         recip.title = title
         recip.descrip = description
@@ -107,7 +107,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         recip.time = time
         recip.ingredLines = ingredLines
         recip.uri = uri!
-        // on retourne l'instance avec les propriétés valorisés
+        // return the instancant withe properties valorised
         return recip
     }
     

@@ -10,12 +10,11 @@ import Foundation
 import CoreData
 @testable import Reciplease
 
-// class pour gerer les test CoreDatata
 class MockCoreData {
   
 // MARK: - managedObjectContextLazy
     lazy var managedObjectContextLazy: NSManagedObjectContext = {
-// creation d'une variable calculée  de type NSManagedObjectContext pour accéder a son ppersistentStoreCoordinator
+// Access to PersistentStoreCoordinator
         let coordinator = self.persistentStoreCoordinator
         let managedObjectContext = NSManagedObjectContext()
         managedObjectContext.persistentStoreCoordinator = coordinator
@@ -24,19 +23,17 @@ class MockCoreData {
     
     
     lazy var managedObjectModel: NSManagedObjectModel = {
-        // merge du model qui se trouve dans le budle du fichier centrale
         let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle.main])!
         return managedObjectModel
     }()
     
     // MARK: - persistentStoreCoordinator
     
-    //Gestions du NSNSPersistentStoreCoordinator pour enrengistere les éléments sur la mémoire et non sur le disque
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         var coordinator: NSPersistentStoreCoordinator? =
-            // initialisation du modéle avec les élements a enregistré
+            // initialisation model to elements saved
             NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        do {// initialisation pour enregistrer les élemenst sur la mémoire
+        do {// sava in memory
             try coordinator!.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
         }
         catch {
@@ -47,7 +44,8 @@ class MockCoreData {
     }()
     
     // MARK: - persistentStoreCoordinator
-    // creations d'une variable calculée qui renvoi le managedObjectContextLazy
+    
+    //context from instance persistentStoreCoordinator
     var viewContext : NSManagedObjectContext {
         return managedObjectContextLazy
     }

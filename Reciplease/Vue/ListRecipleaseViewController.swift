@@ -9,14 +9,7 @@ import UIKit
 // MARK:- View Table List Recip Management
 
 class ListRecipleaseViewController: UIViewController {
-    // methode de passage de donnée de controleur à l'autre  avec pour paramétre sender qui est l'objet d'ou part le segue 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToDetails" {
-            let successVC = segue.destination as? DetailsViewController
-            let recip = sender as! PropertiesReciplease
-            successVC?.recipe = recip
-        }
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.listReciplease.dataSource = self
@@ -41,9 +34,10 @@ extension ListRecipleaseViewController : UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let recipe = PropertiesRecipService.shared.listRecip[indexPath.row]
-        
-        performSegue(withIdentifier: "segueToDetails", sender: recipe)
+        let recip = PropertiesRecipService.shared.listRecip[indexPath.row]
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewControllerID") as! DetailsViewController
+        vc.recipe = recip
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

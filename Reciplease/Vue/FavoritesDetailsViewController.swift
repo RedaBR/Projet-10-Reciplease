@@ -12,20 +12,16 @@ class FavoritesDetailsViewController: UIViewController {
     @IBOutlet weak var detailsList: UITextView!
     @IBOutlet weak var imgDetails: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
-   
-    
-    
     @IBAction func deleteToFav(_ sender: UIButton) {
         CoreDataStack.sharedInstance.delete(recipeToDelete: recipe!)
         let image = UIImage(systemName: "star")
         sender.setImage(image, for: .normal)
     }
-    // initialisation de l'objet recipe pour obtenir les éléments enregistré sur CoreData
-    var recipe : CoreDataRecipe?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
+    
+    var recipe : CoreDataRecipe?
+    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.detailsTitle.text = recipe?.title
@@ -41,7 +37,7 @@ class FavoritesDetailsViewController: UIViewController {
       
         timeLabel.text = String(recipe!.time)
     }
-    
+    // Delete Recipe to Core Data 
     func getRecipeToDelete () {
         CoreDataStack.sharedInstance.getPropertieWithTitle(uri: (recipe?.uri)!) { (recipeToDelete) in
             recipe = recipeToDelete.first

@@ -9,10 +9,9 @@ import XCTest
 @testable import Reciplease
 
 class CoreDataRecipleaseTests: XCTestCase {
-
-    func testGetProperties () {
-// initialisation du context de CoreDataRecipe qui herite de NSManagedObject qui a  un init context de type NSManagedObjectContext
-        
+    
+    // MARK: - Get Recipes
+    func testGetProperties () {        
         let properties = CoreDataRecipe(context: CoreDataStack.sharedInstance.viewContext)
         properties.uri = "toto"
         do {
@@ -24,9 +23,10 @@ class CoreDataRecipleaseTests: XCTestCase {
         CoreDataStack.sharedInstance.getProperties { (recipes) in
             XCTAssertEqual(recipes.count>0,properties.uri == "toto")
         }
-     
     }
     
+    // MARK: - Delete Recipes
+
     func testDeleteRecipeToDataBase () {
         let properties = CoreDataRecipe(context: CoreDataStack.sharedInstance.viewContext)
         properties.uri = "toto"

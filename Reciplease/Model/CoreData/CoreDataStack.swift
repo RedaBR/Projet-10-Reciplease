@@ -9,10 +9,15 @@ import Foundation
 import CoreData
 
 class CoreDataStack {
-    static let sharedInstance = CoreDataStack()
+    private init() {}
     
+    // MARK:-Persistent Container CoreData
+    
+    static let sharedInstance = CoreDataStack()
+    // Access to the container to name the database
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Reciplease")
+        // Access to PersistentStore
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -25,12 +30,16 @@ class CoreDataStack {
         return CoreDataStack.sharedInstance.persistentContainer.viewContext
     }
     
-    private init() {}
+    
+    // MARK:- CoreData requests
     
     func getProperties(completion: ([CoreDataRecipe]) -> Void) {
+        // request
         let request: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
         do {
+        // request execution
             let properties = try CoreDataStack.sharedInstance.viewContext.fetch(request)
+        // get the result of request
             completion(properties)
         } catch {
             completion([])
@@ -39,7 +48,7 @@ class CoreDataStack {
     
     func getPropertieWithTitle(uri:String, completion: ([CoreDataRecipe]) -> Void) {
         let request: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
-        
+        // Precision of request 
         request.predicate = NSPredicate(format: "uri == %@", uri )
         
         do {

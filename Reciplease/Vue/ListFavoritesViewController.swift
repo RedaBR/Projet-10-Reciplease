@@ -8,17 +8,7 @@
 import UIKit
 // MARK:- List of Favorites
 class ListFavoritesViewController: UIViewController {
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "segueToFavoritesDetails" {
-//            let successVC = segue.destination as? FavoritesDetailsViewController
-//            let recip = sender as! CoreDataRecipe
-//            successVC?.recipe = recip
-//
-//        }
-//
-//    }
-   
-   
+
     @IBOutlet weak var ListFavTableView: UITableView!
     
     override func viewDidLoad() {
@@ -53,23 +43,21 @@ class ListFavoritesViewController: UIViewController {
 }
 // MARK:- DataSourceDelegate
 
-// gestion du nombre de ligne par section
+// number of lines per section
 extension ListFavoritesViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         backUpList.count
     }
     
-    // initialisation de la classe nécessaire a la cum des ceullue avec la methode dequeueReusableCell
+    // cum of the cells with the method dequeueReusableCell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ListFavTableView.dequeueReusableCell(withIdentifier: "CustomFavCellTableViewCellID", for: indexPath) as! CustomFavCellTableViewCell
-        // gestion du nombre de cellule en fonction du nombre d'eleméts du tableau backupLis avec le type IndexPath qui est une structure avec 2 proprité sectio et row
+        // number of cells
         let recipeCoreData = backUpList[indexPath.row]
-        // appel de la methode initFavCell de class CustomFavCellTableViewCell
         cell.initFavCell(recipe: recipeCoreData)
         return cell
     }
     
-    // methode pour géer l'appuie sur une cellule ( selection )
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recipeCoreData = backUpList[indexPath.row]
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FavoritesDetailsID") as! FavoritesDetailsViewController

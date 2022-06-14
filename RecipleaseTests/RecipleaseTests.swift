@@ -10,7 +10,7 @@ import XCTest
 @testable import Reciplease
 
 class RecipleaseTests: XCTestCase {
-// creations d'une methode qui simule une une URLSession 
+    // MARK: - Test if error
     func testGetRecipeShouldPostFailedCallbackIfError() {
         // Given
         let recipe = RecipleaseService(session: URLSessionFake(data: nil, error: FakeResponseDate.error, response: nil))
@@ -24,7 +24,7 @@ class RecipleaseTests: XCTestCase {
         
         wait(for: [expectation], timeout: 4)
     }
-    
+    // MARK: - Test if no data
     func testGetRecipeShouldPostFailedCallbackIfNoData() {
         // Given
         let recipe = RecipleaseService(session:URLSessionFake(data:nil, error:nil, response:nil))
@@ -40,7 +40,7 @@ class RecipleaseTests: XCTestCase {
         
         wait(for: [expectation], timeout: 4)
     }
-    
+    // MARK: - Test if incorrect response
     func testGetRecipeShouldPostFailedCallbackIfIncorrectResponse() {
         // Given
         let recipe = RecipleaseService(session:URLSessionFake(data:FakeResponseDate().correctTranslateData, error:nil, response:FakeResponseDate().responseKO))
@@ -56,7 +56,7 @@ class RecipleaseTests: XCTestCase {
         
         wait(for: [expectation], timeout: 1)
     }
-    
+    // MARK: - Test if incorrect data
     func testGetRecipeShouldPostFailedCallbackIfIncorrectData() {
         // Given
         let recipe = RecipleaseService(session:URLSessionFake(data:FakeResponseDate().incorrectData, error:nil, response:FakeResponseDate().responseOK))
@@ -71,7 +71,7 @@ class RecipleaseTests: XCTestCase {
       
         wait(for: [expectation], timeout: 1)
     }
-    
+    // MARK: - Test if no error and correct data 
     func testRecipeShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         let ingredients = "tomate"
         // Given
