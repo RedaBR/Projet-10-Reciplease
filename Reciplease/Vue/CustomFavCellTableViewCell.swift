@@ -6,7 +6,7 @@
 //
 
 import UIKit
-// MARK:- Custom Cell Favorites 
+// MARK: - Custom Cell Favorites 
 class CustomFavCellTableViewCell: UITableViewCell {
     // éléments de la vue
     @IBOutlet weak var mainImg: UIImageView!
@@ -14,25 +14,21 @@ class CustomFavCellTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeIcon: UIImageView!
-    
     // Associate elements of view to elements of CoreData 
-    func initFavCell (recipe:CoreDataRecipe) {
+    func initFavCell (recipe: CoreDataRecipe) {
         titre.text = recipe.title
-        let imageUrl:URL = URL(string: recipe.imageUrl!)!
+        let imageUrl: URL = URL(string: recipe.imageUrl!)!
         DispatchQueue.global(qos: .userInitiated).async {
             do {
-                let imageData:NSData = try NSData(contentsOf: imageUrl)
-                
+                let imageData: NSData = try NSData(contentsOf: imageUrl)
                 DispatchQueue.main.async {
                     let image = UIImage(data: imageData as Data)
                     self.mainImg.image = image
                 }
-            }
-            catch {
+            } catch {
             }
         }
         descriptionLabel.text = recipe.descript
         timeLabel.text = String(recipe.time)
     }
-    
 }

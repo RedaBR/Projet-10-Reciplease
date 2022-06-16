@@ -7,24 +7,20 @@
 
 import UIKit
 
-// MARK:- Custom Details Recip List
+// MARK: - Custom Details Recip List
 class DetailsViewController: UIViewController {
     var object : CoreDataRecipe?
     var isFav = false
-   
     @IBOutlet weak var titleRecip: UILabel!
     @IBOutlet weak var list: UITextView!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
 
     var recipe:PropertiesReciplease?
-    
     @IBAction func addFav() {
             save()
-        
     }
-    
-    // MARK:- Save to CoreData
+    // MARK: - Save to CoreData
     func save () {
         if (isFav == true) {
             presentAlert(with: "already in fav")
@@ -48,8 +44,7 @@ class DetailsViewController: UIViewController {
             presentAlert(with: error.localizedDescription)
         }
     }
-    
-    // MARK:- Check if recipe with element with identified value
+    // MARK: - Check if recipe with element with identified value
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         CoreDataStack.sharedInstance.getPropertieWithTitle(uri: recipe?.uri ?? "") { (recipes) in
@@ -61,8 +56,7 @@ class DetailsViewController: UIViewController {
                 isFav = false
             }
         }
-        
-        // MARK:- Association of view elements with network call properties
+        // MARK: - Association of view elements with network call properties
         let imageUrl:URL = URL(string: recipe!.imageUrl)!
         DispatchQueue.global(qos: .userInitiated).async {
             let imageData:NSData = NSData(contentsOf: imageUrl)!
@@ -72,23 +66,16 @@ class DetailsViewController: UIViewController {
             }
         }
         self.titleRecip.text = recipe?.title
-        
         let ingredientsLines = recipe?.ingredLines
         let listIngred = ingredientsLines?.joined(separator: "\n")
         list.text = listIngred
-        
-      
-        
         timeLabel.text = String(recipe!.time)
-        
     }
-    
-    // MARK:- Alert
+    // MARK: - Alert
     func presentAlert(with msg: String) {
         let alert = UIAlertController(title: "Erreur", message: msg, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
-    
 }

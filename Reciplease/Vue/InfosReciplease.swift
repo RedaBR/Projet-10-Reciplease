@@ -1,6 +1,5 @@
 
 import Foundation
-
 // MARK: - InfosReciplease
 struct InfosReciplease: Codable {
     let from, to, count: Int?

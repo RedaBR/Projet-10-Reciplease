@@ -6,7 +6,7 @@
 //
 
 import UIKit
-// MARK:- View Table Favorites Management
+// MARK: - View Table Favorites Management
 class FavoritesDetailsViewController: UIViewController {
     @IBOutlet weak var detailsTitle: UILabel!
     @IBOutlet weak var detailsList: UITextView!
@@ -17,24 +17,19 @@ class FavoritesDetailsViewController: UIViewController {
         let image = UIImage(systemName: "star")
         sender.setImage(image, for: .normal)
     }
-    
-    
-    var recipe : CoreDataRecipe?
-    
-
+    var recipe: CoreDataRecipe?
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.detailsTitle.text = recipe?.title
         detailsList.text = recipe?.ingredLines
-        let imageUrl:URL = URL(string: recipe!.imageUrl!)!
+        let imageUrl: URL = URL(string: recipe!.imageUrl!)!
         DispatchQueue.global(qos: .userInitiated).async {
-            let imageData:NSData = NSData(contentsOf: imageUrl)!
+            let imageData: NSData = NSData(contentsOf: imageUrl)!
             DispatchQueue.main.async {
                 let image = UIImage(data: imageData as Data)
                 self.imgDetails.image = image
             }
         }
-      
         timeLabel.text = String(recipe!.time)
     }
     // Delete Recipe to Core Data 
@@ -43,5 +38,4 @@ class FavoritesDetailsViewController: UIViewController {
             recipe = recipeToDelete.first
         }
     }
-    
 }

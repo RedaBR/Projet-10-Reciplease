@@ -6,7 +6,7 @@
 //
 
 import UIKit
-// MARK:- View Table List Recip Management
+// MARK: - View Table List Recip Management
 
 class ListRecipleaseViewController: UIViewController {
 
@@ -16,32 +16,24 @@ class ListRecipleaseViewController: UIViewController {
         self.listReciplease.delegate = self
     }
     @IBOutlet weak var listReciplease: UITableView!
-    
 }
 
-// MARK:- DataSourceDelegate
-extension ListRecipleaseViewController : UITableViewDataSource, UITableViewDelegate {
+// MARK: - DataSourceDelegate
+extension ListRecipleaseViewController: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         PropertiesRecipService.shared.listRecip.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = listReciplease.dequeueReusableCell(withIdentifier: "CustomCellTableViewCellID") as! CustomCellTableViewCell
+        let cell = listReciplease.dequeueReusableCell(withIdentifier: "CustomCellTableViewCellID") as? CustomCellTableViewCell
         let recipe = PropertiesRecipService.shared.listRecip[indexPath.row]
-        
-        cell.initCell(recipe: recipe)
-        return cell
+        cell?.initCell(recipe: recipe)
+        return cell!
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recip = PropertiesRecipService.shared.listRecip[indexPath.row]
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewControllerID") as! DetailsViewController
         vc.recipe = recip
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController!.pushViewController(vc, animated: true)
     }
-    
 }
-
-
-
-

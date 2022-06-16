@@ -6,15 +6,13 @@
 //
 
 import UIKit
-// MARK:- Custom Cell List
+// MARK: - Custom Cell List
 class CustomCellTableViewCell: UITableViewCell {
-    
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var titre: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeIcon: UIImageView!
-    
     func initCell(recipe:PropertiesReciplease) {
         let imageUrl:URL = URL(string: recipe.imageUrl)!
         DispatchQueue.global(qos: .userInitiated).async {
@@ -27,7 +25,6 @@ class CustomCellTableViewCell: UITableViewCell {
        }
         self.titre.text = recipe.title
         self.descriptionLabel.text = recipe.descrip
-       
         self.timeLabel.text = String(recipe.time)
     }
 }

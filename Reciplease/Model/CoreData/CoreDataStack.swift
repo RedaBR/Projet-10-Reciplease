@@ -10,9 +10,7 @@ import CoreData
 
 class CoreDataStack {
     private init() {}
-    
-    // MARK:-Persistent Container CoreData
-    
+    // MARK: - Persistent Container CoreData
     static let sharedInstance = CoreDataStack()
     // Access to the container to name the database
     private lazy var persistentContainer: NSPersistentContainer = {
@@ -25,14 +23,10 @@ class CoreDataStack {
         })
         return container
     }()
-    
-    var viewContext : NSManagedObjectContext {
+    var viewContext: NSManagedObjectContext {
         return CoreDataStack.sharedInstance.persistentContainer.viewContext
     }
-    
-    
-    // MARK:- CoreData requests
-    
+    // MARK: - CoreData requests
     func getProperties(completion: ([CoreDataRecipe]) -> Void) {
         // request
         let request: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
@@ -45,12 +39,10 @@ class CoreDataStack {
             completion([])
         }
     }
-    
     func getPropertieWithTitle(uri:String, completion: ([CoreDataRecipe]) -> Void) {
         let request: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
         // Precision of request 
         request.predicate = NSPredicate(format: "uri == %@", uri )
-        
         do {
             let properties = try CoreDataStack.sharedInstance.viewContext.fetch(request)
             try CoreDataStack.sharedInstance.viewContext.save()
@@ -59,17 +51,12 @@ class CoreDataStack {
             completion([])
         }
     }
-    
-    func delete (recipeToDelete:NSManagedObject) {
-        
+    func delete (recipeToDelete: NSManagedObject) {
         let request: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
         do {
-            
             let properties = try CoreDataStack.sharedInstance.viewContext.delete(recipeToDelete)
             try CoreDataStack.sharedInstance.viewContext.save()
-        }
-        catch {
-            
+        } catch {
         }
     }
 }
