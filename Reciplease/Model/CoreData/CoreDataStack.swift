@@ -39,7 +39,7 @@ class CoreDataStack {
             completion([])
         }
     }
-    func getPropertieWithTitle(uri:String, completion: ([CoreDataRecipe]) -> Void) {
+    func getPropertieWithTitle(uri: String, completion: ([CoreDataRecipe]) -> Void) {
         let request: NSFetchRequest<CoreDataRecipe> = CoreDataRecipe.fetchRequest()
         // Precision of request 
         request.predicate = NSPredicate(format: "uri == %@", uri )

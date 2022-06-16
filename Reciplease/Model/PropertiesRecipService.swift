@@ -8,12 +8,12 @@
 import Foundation
 class PropertiesRecipService {
     static let shared = PropertiesRecipService()
-    var listRecip : [PropertiesReciplease] = []
+    var listRecip: [PropertiesReciplease] = []
 
     func clearList () {
         listRecip.removeAll()
     }
-    func addList (list:PropertiesReciplease) {
+    func addList (list: PropertiesReciplease) {
         listRecip.append(list)
     }
 }

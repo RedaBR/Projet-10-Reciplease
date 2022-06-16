@@ -9,14 +9,14 @@ import UIKit
 
 // MARK: - Custom Details Recip List
 class DetailsViewController: UIViewController {
-    var object : CoreDataRecipe?
+    var object: CoreDataRecipe?
     var isFav = false
     @IBOutlet weak var titleRecip: UILabel!
     @IBOutlet weak var list: UITextView!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
 
-    var recipe:PropertiesReciplease?
+    var recipe: PropertiesReciplease?
     @IBAction func addFav() {
             save()
     }
@@ -39,8 +39,7 @@ class DetailsViewController: UIViewController {
         do {
             try CoreDataStack.sharedInstance.viewContext.save()
             isFav = true
-        }
-        catch {
+        } catch {
             presentAlert(with: error.localizedDescription)
         }
     }
@@ -51,15 +50,14 @@ class DetailsViewController: UIViewController {
             if recipes.count>0 {
                 isFav = true
                 object = recipes.first
-            }
-            else {
+            } else {
                 isFav = false
             }
         }
         // MARK: - Association of view elements with network call properties
-        let imageUrl:URL = URL(string: recipe!.imageUrl)!
+        let imageUrl: URL = URL(string: recipe!.imageUrl)!
         DispatchQueue.global(qos: .userInitiated).async {
-            let imageData:NSData = NSData(contentsOf: imageUrl)!
+            let imageData: NSData = NSData(contentsOf: imageUrl)!
             DispatchQueue.main.async {
                 let image = UIImage(data: imageData as Data)
                 self.mainImage.image = image

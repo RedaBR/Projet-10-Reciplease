@@ -42,7 +42,7 @@ class RecipleaseTests: XCTestCase {
     // MARK: - Test if incorrect response
     func testGetRecipeShouldPostFailedCallbackIfIncorrectResponse() {
         // Given
-    let recipe = RecipleaseService(session: URLSessionFake(data:FakeResponseDate().correctTranslateData, error: nil, response: FakeResponseDate().responseKO))
+    let recipe = RecipleaseService(session: URLSessionFake(data: FakeResponseDate().correctTranslateData, error: nil, response: FakeResponseDate().responseKO))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         recipe.getReciplease(ingredients: nil) { (data, sucess, error) in
@@ -73,10 +73,10 @@ class RecipleaseTests: XCTestCase {
     func testRecipeShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         let ingredients = "tomate"
         // Given
-        let recipe = RecipleaseService(session: URLSessionFake(data: FakeResponseDate().correctTranslateData, error: nil, response:FakeResponseDate().responseOK))
+        let recipe = RecipleaseService(session: URLSessionFake(data: FakeResponseDate().correctTranslateData, error: nil, response: FakeResponseDate().responseOK))
         // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        recipe.getReciplease(ingredients:ingredients) {(data, success, error) in
+        recipe.getReciplease(ingredients: ingredients) {(data, success, error) in
         // Then
         XCTAssertTrue((success != nil))
         XCTAssertNotNil(data)

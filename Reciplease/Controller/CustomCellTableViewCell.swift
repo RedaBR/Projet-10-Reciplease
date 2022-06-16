@@ -13,10 +13,10 @@ class CustomCellTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var timeIcon: UIImageView!
-    func initCell(recipe:PropertiesReciplease) {
-        let imageUrl:URL = URL(string: recipe.imageUrl)!
+    func initCell(recipe: PropertiesReciplease) {
+        let imageUrl: URL = URL(string: recipe.imageUrl)!
         DispatchQueue.global(qos: .userInitiated).async {
-            let imageData:NSData = NSData(contentsOf: imageUrl)!
+            let imageData: NSData = NSData(contentsOf: imageUrl)!
             // When from background thread, UI needs to be updated on main_queue
             DispatchQueue.main.async {
              let image = UIImage(data: imageData as Data)

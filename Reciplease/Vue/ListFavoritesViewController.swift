@@ -22,7 +22,7 @@ class ListFavoritesViewController: UIViewController {
         backUpList.removeAll()
         getFetch()
     }
-    var backUpList : [CoreDataRecipe] = []
+    var backUpList: [CoreDataRecipe] = []
     func getFetch () {
         CoreDataStack.sharedInstance.getProperties { (savedProperties) in
             backUpList.append(contentsOf: savedProperties)
@@ -42,7 +42,7 @@ class ListFavoritesViewController: UIViewController {
 // MARK: - DataSourceDelegate
 
 // number of lines per section
-extension ListFavoritesViewController : UITableViewDataSource, UITableViewDelegate {
+extension ListFavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         backUpList.count
     }
@@ -63,4 +63,3 @@ extension ListFavoritesViewController : UITableViewDataSource, UITableViewDelega
     }
 
 }
-

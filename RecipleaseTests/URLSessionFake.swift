@@ -8,12 +8,12 @@
 import Foundation
 // MARK: - URL Session Fake
 
-class URLSessionFake : URLSession {
-    var data : Data?
-    var error : Error?
-    var response : URLResponse?
+class URLSessionFake: URLSession {
+    var data: Data?
+    var error: Error?
+    var response: URLResponse?
     // Initializer to be able to associate them with the desired values
-    init(data:Data?, error:Error?, response:URLResponse?) {
+    init(data: Data?, error: Error?, response: URLResponse?) {
         self.data=data
         self.error=error
         self.response = response
@@ -32,11 +32,11 @@ class URLSessionFake : URLSession {
 // MARK: - URL Session Data Tak Fake
 
 // Creation of a fake class URLSessionDataTask"Fake" of type real class URLSessionDataTask
-class URLSessionDataTaskFake : URLSessionDataTask {
-    var callback : ((Data?, URLResponse?, Error?) -> Void)?
-    var data : Data?
-    var urlResponse : URLResponse?
-    var responseError : Error?
+class URLSessionDataTaskFake: URLSessionDataTask {
+    var callback: ((Data?, URLResponse?, Error?) -> Void)?
+    var data: Data?
+    var urlResponse: URLResponse?
+    var responseError: Error?
     // launch of the task with our false properties
     override func resume() {
         callback?(data, urlResponse, responseError)

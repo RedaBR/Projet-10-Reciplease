@@ -8,5 +8,5 @@
 import Foundation
 import CoreData
 
-class CoreDataRecipe : NSManagedObject {
+class CoreDataRecipe: NSManagedObject {
 }

@@ -238,4 +238,3 @@ struct ChocdfNet: Codable {
 struct InfosRecipleaseLinks: Codable {
     let next: Next?
 }
-
