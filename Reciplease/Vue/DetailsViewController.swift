@@ -22,7 +22,7 @@ class DetailsViewController: UIViewController {
     }
     // MARK: - Save to CoreData
     func save () {
-        if (isFav == true) {
+        if isFav == true {
             presentAlert(with: "already in fav")
             return
         }

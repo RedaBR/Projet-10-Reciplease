@@ -8,7 +8,6 @@
 import UIKit
 // MARK: - Custom Cell Favorites 
 class CustomFavCellTableViewCell: UITableViewCell {
-    // éléments de la vue
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var titre: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!

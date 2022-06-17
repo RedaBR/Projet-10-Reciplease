@@ -34,6 +34,6 @@ extension ListRecipleaseViewController: UITableViewDataSource, UITableViewDelega
         let recip = PropertiesRecipService.shared.listRecip[indexPath.row]
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewControllerID") as! DetailsViewController
         vc.recipe = recip
-        navigationController!.pushViewController(vc, animated: true)
+        self.navigationController!.pushViewController(vc, animated: true)
     }
 }
