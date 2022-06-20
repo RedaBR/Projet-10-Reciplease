@@ -1,6 +1,6 @@
-
-import Foundation
 // MARK: - InfosReciplease
+import Foundation
+
 struct InfosReciplease: Codable {
     let from, to, count: Int?
     let links: InfosRecipleaseLinks?

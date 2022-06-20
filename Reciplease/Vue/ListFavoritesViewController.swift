@@ -8,7 +8,7 @@
 import UIKit
 // MARK: - List of Favorites
 class ListFavoritesViewController: UIViewController {
-
+    
     @IBOutlet weak var ListFavTableView: UITableView!
 
     override func viewDidLoad() {
@@ -28,12 +28,12 @@ class ListFavoritesViewController: UIViewController {
             backUpList.append(contentsOf: savedProperties)
             ListFavTableView.reloadData()
             if backUpList.isEmpty {
-                presentAlert(with: "explications")
+                presentAlert(with: " You can indicate the foods you have in the Search tab at the bottom of the screen to get delicious recipes.\n \n You can add your favorite recipes by selecting the recipe from the list provided and using the star at the top right. \n \n So you can find your favorite recipes in this Fav tab. \n \n To remove a recipe from your favourites, select the recipe from the favorites list and press the green star at the top of the screen.")
             }
         }
     }
     func presentAlert(with error: String) {
-        let alert = UIAlertController(title: "Erreur", message: error, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Indications", message: error, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)

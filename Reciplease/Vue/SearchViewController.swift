@@ -1,12 +1,6 @@
-//
-//  SearchViewController.swift
-//  Reciplease
-//
-//  Created by Reda on 03/05/2022.
-//
-
-import UIKit
 // MARK: - Search
+import UIKit
+
 class SearchViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var listIngred: UITextView!
     override func viewDidLoad() {
@@ -78,11 +72,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         // Retrieve the properties of the network call
         var desc: [String] = []
         let ingredients = hit.recipe?.ingredients ?? []
-        for ing in ingredients {
-            if ing.food != nil {
-                desc.append(ing.food!)
+        for ing in ingredients where ing.food != nil {
+            desc.append(ing.food!)
             }
-        }
         let description = desc.joined(separator: ", ")
         let imageUrl = hit.recipe?.image ?? ""
         let time = hit.recipe?.totalTime ?? 0

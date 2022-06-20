@@ -8,6 +8,7 @@
 import UIKit
 // MARK: - View Table Favorites Management
 class FavoritesDetailsViewController: UIViewController {
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var detailsTitle: UILabel!
     @IBOutlet weak var detailsList: UITextView!
     @IBOutlet weak var imgDetails: UIImageView!
