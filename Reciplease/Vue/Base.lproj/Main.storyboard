@@ -188,10 +188,6 @@
                                 <rect key="frame" x="20" y="205" width="388" height="294"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="semibold"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIf-Xy-Yph">
-                                <rect key="frame" x="30" y="774" width="361" height="30"/>
-                                <state key="normal" title="Get directions"/>
-                            </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baK-uV-xlh">
                                 <rect key="frame" x="341" y="103" width="50" height="46.666666666666657"/>
                                 <color key="backgroundColor" red="0.21607002619999999" green="0.2000213861" blue="0.19568935039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -261,8 +257,6 @@
                         <viewLayoutGuide key="safeArea" id="UkP-EP-H9F"/>
                         <color key="backgroundColor" red="0.21607002619999999" green="0.2000213861" blue="0.19568935039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UkP-EP-H9F" firstAttribute="trailing" secondItem="fIf-Xy-Yph" secondAttribute="trailing" constant="37" id="0V0-CV-hGN"/>
-                            <constraint firstItem="fIf-Xy-Yph" firstAttribute="top" secondItem="UkP-EP-H9F" secondAttribute="top" constant="730" id="18n-yx-WHt"/>
                             <constraint firstItem="UkP-EP-H9F" firstAttribute="bottom" secondItem="RJt-zw-g15" secondAttribute="bottom" constant="86" id="6Bj-5p-ZEg"/>
                             <constraint firstItem="fGu-vY-L01" firstAttribute="leading" secondItem="UkP-EP-H9F" secondAttribute="leading" constant="237" id="7ed-9H-TyA"/>
                             <constraint firstItem="nL5-jP-PbX" firstAttribute="leading" secondItem="UkP-EP-H9F" secondAttribute="leading" constant="20" id="89r-SO-Krg"/>
@@ -272,7 +266,6 @@
                             <constraint firstItem="RJt-zw-g15" firstAttribute="top" secondItem="UkP-EP-H9F" secondAttribute="top" constant="453" id="N5H-9m-Vr1"/>
                             <constraint firstItem="myH-mu-g42" firstAttribute="top" secondItem="UkP-EP-H9F" secondAttribute="top" constant="358" id="P1f-sP-acw"/>
                             <constraint firstItem="RJt-zw-g15" firstAttribute="leading" secondItem="UkP-EP-H9F" secondAttribute="leading" constant="20" id="QXI-mN-Jra"/>
-                            <constraint firstItem="fIf-Xy-Yph" firstAttribute="leading" secondItem="UkP-EP-H9F" secondAttribute="leading" constant="30" id="S0j-un-upH"/>
                             <constraint firstItem="nL5-jP-PbX" firstAttribute="top" secondItem="UkP-EP-H9F" secondAttribute="top" constant="161" id="YaQ-Bb-jqa"/>
                             <constraint firstItem="UkP-EP-H9F" firstAttribute="trailing" secondItem="baK-uV-xlh" secondAttribute="trailing" constant="37" id="diD-Zp-HQy"/>
                             <constraint firstItem="UkP-EP-H9F" firstAttribute="trailing" secondItem="RJt-zw-g15" secondAttribute="trailing" constant="20" id="hSb-om-7Ie"/>
@@ -317,10 +310,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r4f-b2-x0R" userLabel="Main Image">
                                 <rect key="frame" x="20" y="145" width="388" height="255"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMe-7G-jsj">
-                                <rect key="frame" x="30" y="884" width="361" height="30"/>
-                                <state key="normal" title="Get directions"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipe title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSS-bl-zJB">
                                 <rect key="frame" x="30" y="351.33333333333331" width="378" height="33.666666666666686"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -394,13 +383,10 @@
                             <constraint firstItem="r4f-b2-x0R" firstAttribute="top" secondItem="ogx-kU-CBF" secondAttribute="bottom" constant="39" id="YlZ-qq-acG"/>
                             <constraint firstItem="s5i-1l-HEc" firstAttribute="trailing" secondItem="ogx-kU-CBF" secondAttribute="trailing" constant="20" id="bIa-U4-y3M"/>
                             <constraint firstItem="r4f-b2-x0R" firstAttribute="top" secondItem="7dh-25-SAD" secondAttribute="bottom" constant="45.329999999999998" id="bhh-XW-90E"/>
-                            <constraint firstItem="s5i-1l-HEc" firstAttribute="trailing" secondItem="HMe-7G-jsj" secondAttribute="trailing" constant="37" id="eOo-0N-JOp"/>
                             <constraint firstItem="s5i-1l-HEc" firstAttribute="trailing" secondItem="cSu-o3-SDK" secondAttribute="trailing" constant="20" id="fdU-2V-Qnu"/>
                             <constraint firstItem="ogx-kU-CBF" firstAttribute="leading" secondItem="7dh-25-SAD" secondAttribute="trailing" constant="139.33000000000001" id="g8t-mL-Jid"/>
                             <constraint firstItem="ogx-kU-CBF" firstAttribute="top" secondItem="s5i-1l-HEc" secondAttribute="top" constant="15" id="gpq-Fr-9tS"/>
-                            <constraint firstItem="HMe-7G-jsj" firstAttribute="leading" secondItem="s5i-1l-HEc" secondAttribute="leading" constant="30" id="jt3-EC-1fz"/>
                             <constraint firstItem="cSu-o3-SDK" firstAttribute="top" secondItem="s5i-1l-HEc" secondAttribute="top" constant="367" id="oW1-r3-anu"/>
-                            <constraint firstItem="HMe-7G-jsj" firstAttribute="bottom" secondItem="s5i-1l-HEc" secondAttribute="bottom" constant="22" id="qgZ-TC-kfz"/>
                             <constraint firstItem="7dh-25-SAD" firstAttribute="leading" secondItem="s5i-1l-HEc" secondAttribute="leading" constant="30" id="tdc-LM-PHh"/>
                             <constraint firstItem="Mun-nc-tGZ" firstAttribute="top" secondItem="s5i-1l-HEc" secondAttribute="top" constant="105" id="vrF-jt-pII"/>
                             <constraint firstItem="s5i-1l-HEc" firstAttribute="trailing" secondItem="Mun-nc-tGZ" secondAttribute="trailing" constant="20" id="wid-Ur-ZtY"/>
