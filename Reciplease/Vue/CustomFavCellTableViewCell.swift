@@ -8,6 +8,7 @@
 import UIKit
 // MARK: - Custom Cell Favorites 
 class CustomFavCellTableViewCell: UITableViewCell {
+    @IBOutlet weak var load: UIActivityIndicatorView!
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var titre: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -16,6 +17,7 @@ class CustomFavCellTableViewCell: UITableViewCell {
     // Associate elements of view to elements of CoreData 
     func initFavCell (recipe: CoreDataRecipe) {
         titre.text = recipe.title
+        load.isHidden = false
         let imageUrl: URL = URL(string: recipe.imageUrl!)!
         DispatchQueue.global(qos: .userInitiated).async {
             do {
@@ -23,6 +25,7 @@ class CustomFavCellTableViewCell: UITableViewCell {
                 DispatchQueue.main.async {
                     let image = UIImage(data: imageData as Data)
                     self.mainImg.image = image
+                    self.load.isHidden = true
                 }
             } catch {
             }

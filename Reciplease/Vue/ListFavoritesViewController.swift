@@ -8,7 +8,7 @@
 import UIKit
 // MARK: - List of Favorites
 class ListFavoritesViewController: UIViewController {
-    
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var ListFavTableView: UITableView!
 
     override func viewDidLoad() {
