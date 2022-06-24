@@ -25,15 +25,19 @@ extension ListRecipleaseViewController: UITableViewDataSource, UITableViewDelega
         PropertiesRecipService.shared.listRecip.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = listReciplease.dequeueReusableCell(withIdentifier: "CustomCellTableViewCellID") as? CustomCellTableViewCell
-        let recipe = PropertiesRecipService.shared.listRecip[indexPath.row]
-        cell?.initCell(recipe: recipe)
-        return cell!
+        let list = listReciplease
+        var cell = UITableViewCell()
+        if let customCell = list?.dequeueReusableCell(withIdentifier: "CustomCellTableViewCellID") as? CustomCellTableViewCell {
+            let recipe = PropertiesRecipService.shared.listRecip[indexPath.row]
+           customCell.initCell(recipe: recipe)
+            cell = customCell
+        }
+        return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recip = PropertiesRecipService.shared.listRecip[indexPath.row]
         let vc = UIStoryboard(name: "Main", bundle: nil)
-        guard let instiant = vc.instantiateViewController(withIdentifier: "DetailsViewControllerID") as? DetailsViewController else { return }
+        guard let instiant = vc.instantiateViewController(withIdentifier: "DetailsViewControllerID") as? DetailsViewController else {return }
             instiant.recipe = recip
         self.navigationController!.pushViewController(instiant, animated: true)
     }

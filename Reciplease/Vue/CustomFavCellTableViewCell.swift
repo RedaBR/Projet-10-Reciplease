@@ -29,7 +29,7 @@ class CustomFavCellTableViewCell: UITableViewCell {
                     self.mainImg.image = image
                     self.load.isHidden = true
                 }
-            } catch {
+            } catch {print(error.localizedDescription)
             }
         }
         descriptionLabel.text = recipe.descript

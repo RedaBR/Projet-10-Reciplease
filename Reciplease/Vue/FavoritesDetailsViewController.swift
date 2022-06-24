@@ -31,7 +31,7 @@ class FavoritesDetailsViewController: UIViewController {
                     let image = UIImage(data: imageData as Data)
                     self.imgDetails.image = image
                 }
-            } catch { }
+            } catch { print(error.localizedDescription)}
         }
         timeLabel.text = String(recipe!.time)
     }

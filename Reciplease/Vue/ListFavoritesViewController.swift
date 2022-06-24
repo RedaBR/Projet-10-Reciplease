@@ -48,11 +48,15 @@ extension ListFavoritesViewController: UITableViewDataSource, UITableViewDelegat
     }
     // cum of the cells with the method dequeueReusableCell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ListFavTableView.dequeueReusableCell(withIdentifier: "CustomFavCellTableViewCellID", for: indexPath) as? CustomFavCellTableViewCell
-        // number of cells
-        let recipeCoreData = backUpList[indexPath.row]
-        cell?.initFavCell(recipe: recipeCoreData)
-        return cell!
+        let list = ListFavTableView
+        var cell = UITableViewCell()
+        if let customCell = list?.dequeueReusableCell(withIdentifier: "CustomFavCellTableViewCellID", for: indexPath) as? CustomFavCellTableViewCell {
+            // number of cells
+            let recipeCoreData = backUpList[indexPath.row]
+            customCell.initFavCell(recipe: recipeCoreData)
+            cell = customCell
+        } else {presentAlert(with: "")}
+        return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
