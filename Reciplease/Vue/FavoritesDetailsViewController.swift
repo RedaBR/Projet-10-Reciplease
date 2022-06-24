@@ -22,13 +22,16 @@ class FavoritesDetailsViewController: UIViewController {
         super.viewWillAppear(animated)
         self.detailsTitle.text = recipe?.title
         detailsList.text = recipe?.ingredLines
-        let imageUrl: URL = URL(string: recipe!.imageUrl!)!
+        guard let urlString = recipe?.imageUrl,
+        let imageUrl: URL = URL(string: urlString)
+        else { return }
         DispatchQueue.global(qos: .userInitiated).async {
-            let imageData: NSData = NSData(contentsOf: imageUrl)!
-            DispatchQueue.main.async {
-                let image = UIImage(data: imageData as Data)
-                self.imgDetails.image = image
-            }
+            do { let imageData: NSData = try NSData(contentsOf: imageUrl)
+                DispatchQueue.main.async {
+                    let image = UIImage(data: imageData as Data)
+                    self.imgDetails.image = image
+                }
+            } catch { }
         }
         timeLabel.text = String(recipe!.time)
     }

@@ -5,6 +5,6 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
   - line_length
   - return_value_from_void_function
   - type_name
-  - force_cast
+ 
  
  

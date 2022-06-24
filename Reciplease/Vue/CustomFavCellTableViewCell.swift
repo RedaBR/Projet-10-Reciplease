@@ -18,7 +18,9 @@ class CustomFavCellTableViewCell: UITableViewCell {
     func initFavCell (recipe: CoreDataRecipe) {
         titre.text = recipe.title
         load.isHidden = false
-        let imageUrl: URL = URL(string: recipe.imageUrl!)!
+        guard let urlString = recipe.imageUrl,
+        let imageUrl: URL = URL(string: urlString)
+        else {return}
         DispatchQueue.global(qos: .userInitiated).async {
             do {
                 let imageData: NSData = try NSData(contentsOf: imageUrl)

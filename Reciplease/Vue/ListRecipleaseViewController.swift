@@ -32,8 +32,9 @@ extension ListRecipleaseViewController: UITableViewDataSource, UITableViewDelega
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recip = PropertiesRecipService.shared.listRecip[indexPath.row]
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewControllerID") as! DetailsViewController
-        vc.recipe = recip
-        self.navigationController!.pushViewController(vc, animated: true)
+        let vc = UIStoryboard(name: "Main", bundle: nil)
+        guard let instiant = vc.instantiateViewController(withIdentifier: "DetailsViewControllerID") as? DetailsViewController else { return }
+            instiant.recipe = recip
+        self.navigationController!.pushViewController(instiant, animated: true)
     }
 }

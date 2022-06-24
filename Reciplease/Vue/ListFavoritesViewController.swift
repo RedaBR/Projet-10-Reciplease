@@ -57,9 +57,10 @@ extension ListFavoritesViewController: UITableViewDataSource, UITableViewDelegat
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recipeCoreData = backUpList[indexPath.row]
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FavoritesDetailsID") as? FavoritesDetailsViewController
-        vc?.recipe = recipeCoreData
-        self.navigationController?.pushViewController(vc!, animated: true)
+        let vC = UIStoryboard(name: "Main", bundle: nil)
+        guard let instantiateVc = vC.instantiateViewController(withIdentifier: "FavoritesDetailsID") as? FavoritesDetailsViewController else { return}
+        instantiateVc.recipe = recipeCoreData
+        self.navigationController?.pushViewController(instantiateVc, animated: true)
     }
 
 }
