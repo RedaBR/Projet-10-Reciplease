@@ -23,7 +23,7 @@ class DetailsViewController: UIViewController {
     // MARK: - Save to CoreData
     func save () {
         if isFav == true {
-            presentAlert(with: "already in fav")
+            presentAlert(with: "Already in favorites")
             return
         }
         let properties = CoreDataRecipe(context: CoreDataStack.sharedInstance.viewContext)
@@ -71,7 +71,7 @@ class DetailsViewController: UIViewController {
     }
     // MARK: - Alert
     func presentAlert(with msg: String) {
-        let alert = UIAlertController(title: "Erreur", message: msg, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)

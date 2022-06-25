@@ -50,20 +50,22 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     // MARK: - Get Recipes in fuction of ingred add to list
     private func getResult() {
-        RecipleaseService.shared.getReciplease(ingredients: listIngred.text!) { (info, true, error) in
-            let sharedPropertiesRecipe = PropertiesRecipService.shared
-            // clear old items to list
-            sharedPropertiesRecipe.clearList()
-            // recovery recipes in list
-            let hits = info?.hits ?? []
-            for hit in hits {
-                let recip = self.getPropertiesRecipleaseForHit(hit: hit)
-                //  add result to the addList table that we will use to customize cell
-                sharedPropertiesRecipe.addList(list: recip)
-            }
-            // instantiate ListRecipleaseViewController
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListRecipleaseViewControllerID") as? ListRecipleaseViewController
-            self.navigationController?.pushViewController(vc!, animated: true)
+        RecipleaseService.shared.getReciplease(ingredients: listIngred.text!) { (info, succes, error) in
+            if succes {
+                let sharedPropertiesRecipe = PropertiesRecipService.shared
+                // clear old items to list
+                sharedPropertiesRecipe.clearList()
+                // recovery recipes in list
+                let hits = info?.hits ?? []
+                for hit in hits {
+                    let recip = self.getPropertiesRecipleaseForHit(hit: hit)
+                    //  add result to the addList table that we will use to customize cell
+                    sharedPropertiesRecipe.addList(list: recip)
+                }
+                // instantiate ListRecipleaseViewController
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListRecipleaseViewControllerID") as? ListRecipleaseViewController
+                self.navigationController?.pushViewController(vc!, animated: true)
+            } else { self.presentAlert(with: "Veuillez vérifier l'état de votre réseau")}
         }
     }
     // Method to retrieve the properties of the network call
@@ -90,5 +92,11 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         recip.uri = uri!
         // return the instancant withe properties valorised
         return recip
+    }
+    func presentAlert(with error: String) {
+        let alert = UIAlertController(title: "Indications", message: error, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
